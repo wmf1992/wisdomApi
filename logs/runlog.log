@@ -1,0 +1,1441 @@
+2020-03-12 16:50:30,170 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 16:50:30,183 baseMenu.py[line:25] INFO post请求出现了异常
+2020-03-12 16:55:25,468 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 16:55:25,469 baseMenu.py[line:25] INFO <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>系统发生错误</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
+        /* Base */
+        body {
+            color: #333;
+            font: 16px Verdana, "Helvetica Neue", helvetica, Arial, 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0 20px 20px;
+        }
+        h1{
+            margin: 10px 0 0;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 32px;
+        }
+        h2{
+            color: #4288ce;
+            font-weight: 400;
+            padding: 6px 0;
+            margin: 6px 0 0;
+            font-size: 18px;
+            border-bottom: 1px solid #eee;
+        }
+        h3{
+            margin: 12px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        abbr{
+            cursor: help;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+        a{
+            color: #868686;
+            cursor: pointer;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        .line-error{
+            background: #f8cbcb;
+        }
+
+        .echo table {
+            width: 100%;
+        }
+
+        .echo pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: #f7f7f7;
+            border: 0;
+            border-radius: 3px;
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        .echo pre > pre {
+            padding: 0;
+            margin: 0;
+        }
+    
+        /* Exception Info */
+        .exception {
+            margin-top: 20px;
+        }
+        .exception .message{
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-bottom: 0 none;
+            line-height: 18px;
+            font-size:16px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            font-family: Consolas,"Liberation Mono",Courier,Verdana,"微软雅黑";
+        }
+
+        .exception .code{
+            float: left;
+            text-align: center;
+            color: #fff;
+            margin-right: 12px;
+            padding: 16px;
+            border-radius: 4px;
+            background: #999;
+        }
+        .exception .source-code{
+            padding: 6px;
+            border: 1px solid #ddd;
+
+            background: #f9f9f9;
+            overflow-x: auto;
+
+        }
+        .exception .source-code pre{
+            margin: 0;
+        }
+        .exception .source-code pre ol{
+            margin: 0;
+            color: #4288ce;
+            display: inline-block;
+            min-width: 100%;
+            box-sizing: border-box;
+        font-size:14px;
+            font-family: "Century Gothic",Consolas,"Liberation Mono",Courier,Verdana;
+            padding-left: 56px;
+        }
+        .exception .source-code pre li{
+            border-left: 1px solid #ddd;
+            height: 18px;
+            line-height: 18px;
+        }
+        .exception .source-code pre code{
+            color: #333;
+            height: 100%;
+            display: inline-block;
+            border-left: 1px solid #fff;
+        font-size:14px;
+            font-family: Consolas,"Liberation Mono",Courier,Verdana,"微软雅黑";
+        }
+        .exception .trace{
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-top: 0 none;
+            line-height: 16px;
+        font-size:14px;
+            font-family: Consolas,"Liberation Mono",Courier,Verdana,"微软雅黑";
+        }
+        .exception .trace ol{
+            margin: 12px;
+        }
+        .exception .trace ol li{
+            padding: 2px 4px;
+        }
+        .exception div:last-child{
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        /* Exception Variables */
+        .exception-var table{
+            width: 100%;
+            margin: 12px 0;
+            box-sizing: border-box;
+            table-layout:fixed;
+            word-wrap:break-word;            
+        }
+        .exception-var table caption{
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 6px 0;
+        }
+        .exception-var table caption small{
+            font-weight: 300;
+            display: inline-block;
+            margin-left: 10px;
+            color: #ccc;
+        }
+        .exception-var table tbody{
+            font-size: 13px;
+            font-family: Consolas,"Liberation Mono",Courier,"微软雅黑";
+        }
+        .exception-var table td{
+            padding: 0 6px;
+            vertical-align: top;
+            word-break: break-all;
+        }
+        .exception-var table td:first-child{
+            width: 28%;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .exception-var table td pre{
+            margin: 0;
+        }
+
+        /* Copyright Info */
+        .copyright{
+            margin-top: 24px;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+        }
+
+        /* SPAN elements with the classes below are added by prettyprint. */
+        pre.prettyprint .pln { color: #000 }  /* plain text */
+        pre.prettyprint .str { color: #080 }  /* string content */
+        pre.prettyprint .kwd { color: #008 }  /* a keyword */
+        pre.prettyprint .com { color: #800 }  /* a comment */
+        pre.prettyprint .typ { color: #606 }  /* a type name */
+        pre.prettyprint .lit { color: #066 }  /* a literal value */
+        /* punctuation, lisp open bracket, lisp close bracket */
+        pre.prettyprint .pun, pre.prettyprint .opn, pre.prettyprint .clo { color: #660 }
+        pre.prettyprint .tag { color: #008 }  /* a markup tag name */
+        pre.prettyprint .atn { color: #606 }  /* a markup attribute name */
+        pre.prettyprint .atv { color: #080 }  /* a markup attribute value */
+        pre.prettyprint .dec, pre.prettyprint .var { color: #606 }  /* a declaration; a variable name */
+        pre.prettyprint .fun { color: red }  /* a function name */
+    </style>
+</head>
+<body>
+    <div class="echo">
+            </div>
+        <div class="exception">
+    <div class="message">
+        
+            <div class="info">
+                <div>
+                    <h2>[0]&nbsp;<abbr title="think\exception\HttpException">HttpException</abbr> in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/dispatch/Module.php line 126">Module.php line 126</a></h2>
+                </div>
+                <div><h1>方法不存在:app\front\controller\Rule-&gt;leftMenu22()</h1></div>
+            </div>
+        
+    </div>
+	        <div class="source-code">
+            <pre class="prettyprint lang-php"><ol start="117"><li class="line-117"><code>                : $this-&gt;request-&gt;param();
+</code></li><li class="line-118"><code>                $vars = array_merge($vars, $this-&gt;param);
+</code></li><li class="line-119"><code>            } elseif (is_callable([$instance, '_empty'])) {
+</code></li><li class="line-120"><code>                // 空操作
+</code></li><li class="line-121"><code>                $call    = [$instance, '_empty'];
+</code></li><li class="line-122"><code>                $vars    = [$this-&gt;actionName];
+</code></li><li class="line-123"><code>                $reflect = new ReflectionMethod($instance, '_empty');
+</code></li><li class="line-124"><code>            } else {
+</code></li><li class="line-125"><code>                // 操作不存在
+</code></li><li class="line-126"><code>                throw new HttpException(404, 'method not exists:' . get_class($instance) . '-&gt;' . $action . '()');
+</code></li><li class="line-127"><code>            }
+</code></li><li class="line-128"><code>
+</code></li><li class="line-129"><code>            $this-&gt;app['hook']-&gt;listen('action_begin', $call);
+</code></li><li class="line-130"><code>
+</code></li><li class="line-131"><code>            $data = $this-&gt;app-&gt;invokeReflectMethod($instance, $reflect, $vars);
+</code></li><li class="line-132"><code>
+</code></li><li class="line-133"><code>            return $this-&gt;autoResponse($data);
+</code></li><li class="line-134"><code>        });
+</code></li><li class="line-135"><code>
+</code></li></ol></pre>
+        </div>
+	        <div class="trace">
+            <h2>Call Stack</h2>
+            <ol>
+                <li>in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/dispatch/Module.php line 126">Module.php line 126</a></li>
+                                <li>
+                at <abbr title="think\route\dispatch\Module">Module</abbr>->think\route\dispatch\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>)                </li>
+                                <li>
+                at call_user_func_array(<em>object</em>(<abbr title="Closure">Closure</abbr>), [<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>]) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 185">Middleware.php line 185</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->think\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>))                </li>
+                                <li>
+                at call_user_func(<em>object</em>(<abbr title="Closure">Closure</abbr>), <em>object</em>(<abbr title="think\Request">Request</abbr>)) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 130">Middleware.php line 130</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->dispatch(<em>object</em>(<abbr title="think\Request">Request</abbr>), 'controller') in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/dispatch/Module.php line 136">Module.php line 136</a>                </li>
+                                <li>
+                at <abbr title="think\route\dispatch\Module">Module</abbr>->exec() in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/Dispatch.php line 168">Dispatch.php line 168</a>                </li>
+                                <li>
+                at <abbr title="think\route\Dispatch">Dispatch</abbr>->run() in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/App.php line 432">App.php line 432</a>                </li>
+                                <li>
+                at <abbr title="think\App">App</abbr>->think\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>)                </li>
+                                <li>
+                at call_user_func_array(<em>object</em>(<abbr title="Closure">Closure</abbr>), [<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>]) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 185">Middleware.php line 185</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->think\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>))                </li>
+                                <li>
+                at call_user_func(<em>object</em>(<abbr title="Closure">Closure</abbr>), <em>object</em>(<abbr title="think\Request">Request</abbr>)) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 130">Middleware.php line 130</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->dispatch(<em>object</em>(<abbr title="think\Request">Request</abbr>)) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/App.php line 435">App.php line 435</a>                </li>
+                                <li>
+                at <abbr title="think\App">App</abbr>->run() in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/public/index.php line 21">index.php line 21</a>                </li>
+                            </ol>
+        </div>
+    </div>
+        
+    
+        <div class="exception-var">
+        <h2>Environment Variables</h2>
+                <table>
+                        <caption>GET Data<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>POST Data<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Files<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Cookies<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Session<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Server/Request Data</caption>
+            <tbody>
+                                <tr>
+                    <td>USER</td>
+                    <td>
+                        www                    </td>
+                </tr>
+                                <tr>
+                    <td>HOME</td>
+                    <td>
+                        /home/www                    </td>
+                </tr>
+                                <tr>
+                    <td>FCGI_ROLE</td>
+                    <td>
+                        RESPONDER                    </td>
+                </tr>
+                                <tr>
+                    <td>SCRIPT_FILENAME</td>
+                    <td>
+                        /www/docs/yxsoft.net/wisdom_project/public/index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>QUERY_STRING</td>
+                    <td>
+                        s=/front/rule/leftMenu22                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_METHOD</td>
+                    <td>
+                        GET                    </td>
+                </tr>
+                                <tr>
+                    <td>CONTENT_TYPE</td>
+                    <td>
+                        application/x-www-form-urlencoded                    </td>
+                </tr>
+                                <tr>
+                    <td>CONTENT_LENGTH</td>
+                    <td>
+                                            </td>
+                </tr>
+                                <tr>
+                    <td>SCRIPT_NAME</td>
+                    <td>
+                        /index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_URI</td>
+                    <td>
+                        /front/rule/leftMenu22                    </td>
+                </tr>
+                                <tr>
+                    <td>DOCUMENT_URI</td>
+                    <td>
+                        /index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>DOCUMENT_ROOT</td>
+                    <td>
+                        /www/docs/yxsoft.net/wisdom_project/public                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_PROTOCOL</td>
+                    <td>
+                        HTTP/1.1                    </td>
+                </tr>
+                                <tr>
+                    <td>GATEWAY_INTERFACE</td>
+                    <td>
+                        CGI/1.1                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_SOFTWARE</td>
+                    <td>
+                        nginx/1.8.0                    </td>
+                </tr>
+                                <tr>
+                    <td>REMOTE_ADDR</td>
+                    <td>
+                        10.0.86.27                    </td>
+                </tr>
+                                <tr>
+                    <td>REMOTE_PORT</td>
+                    <td>
+                        55346                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_ADDR</td>
+                    <td>
+                        10.0.100.88                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_PORT</td>
+                    <td>
+                        80                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_NAME</td>
+                    <td>
+                        *.yxsoft.net                    </td>
+                </tr>
+                                <tr>
+                    <td>REDIRECT_STATUS</td>
+                    <td>
+                        200                    </td>
+                </tr>
+                                <tr>
+                    <td>PHP_ADMIN_VALUE</td>
+                    <td>
+                        open_basedir=/www/docs/yxsoft.net:/usr/local/php56/lib/php:/tmp/                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_HOST</td>
+                    <td>
+                        wisdom_project.yxsoft.net                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_USER_AGENT</td>
+                    <td>
+                        python-requests/2.22.0                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_ACCEPT_ENCODING</td>
+                    <td>
+                        gzip, deflate                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_ACCEPT</td>
+                    <td>
+                        */*                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_CONNECTION</td>
+                    <td>
+                        keep-alive                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_CONTENT_TYPE</td>
+                    <td>
+                        application/x-www-form-urlencoded                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_ACCESS_TOKEN</td>
+                    <td>
+                        1cbepl/AYdwsf1HxiXwbUhJRupAtnYzNdr02bMrVEay7OxGOnrXqLdjlpecyRD15NhTMAVs                    </td>
+                </tr>
+                                <tr>
+                    <td>PHP_SELF</td>
+                    <td>
+                        /index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_TIME_FLOAT</td>
+                    <td>
+                        1584003316.9955                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_TIME</td>
+                    <td>
+                        1584003316                    </td>
+                </tr>
+                            </tbody>
+                    </table>
+                <table>
+                        <caption>Environment Variables<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>ThinkPHP Constants<small>empty</small></caption>
+                    </table>
+            </div>
+    
+    <div class="copyright">
+        <a title="官方网站" href="http://www.thinkphp.cn">ThinkPHP</a> 
+        <span>V5.1.38 LTS</span> 
+        <span>{ 十年磨一剑-为API开发设计的高性能框架 }</span>
+    </div>
+        <script>
+        var LINE = 126;
+
+        function $(selector, node){
+            var elements;
+
+            node = node || document;
+            if(document.querySelectorAll){
+                elements = node.querySelectorAll(selector);
+            } else {
+                switch(selector.substr(0, 1)){
+                    case '#':
+                        elements = [node.getElementById(selector.substr(1))];
+                        break;
+                    case '.':
+                        if(document.getElementsByClassName){
+                            elements = node.getElementsByClassName(selector.substr(1));
+                        } else {
+                            elements = get_elements_by_class(selector.substr(1), node);
+                        }
+                        break;
+                    default:
+                        elements = node.getElementsByTagName();
+                }
+            }
+            return elements;
+
+            function get_elements_by_class(search_class, node, tag) {
+                var elements = [], eles, 
+                    pattern  = new RegExp('(^|\\s)' + search_class + '(\\s|$)');
+
+                node = node || document;
+                tag  = tag  || '*';
+
+                eles = node.getElementsByTagName(tag);
+                for(var i = 0; i < eles.length; i++) {
+                    if(pattern.test(eles[i].className)) {
+                        elements.push(eles[i])
+                    }
+                }
+
+                return elements;
+            }
+        }
+
+        $.getScript = function(src, func){
+            var script = document.createElement('script');
+            
+            script.async  = 'async';
+            script.src    = src;
+            script.onload = func || function(){};
+            
+            $('head')[0].appendChild(script);
+        }
+
+        ;(function(){
+            var files = $('.toggle');
+            var ol    = $('ol', $('.prettyprint')[0]);
+            var li    = $('li', ol[0]);   
+
+            // 短路径和长路径变换
+            for(var i = 0; i < files.length; i++){
+                files[i].ondblclick = function(){
+                    var title = this.title;
+
+                    this.title = this.innerHTML;
+                    this.innerHTML = title;
+                }
+            }
+
+            // 设置出错行
+            var err_line = $('.line-' + LINE, ol[0])[0];
+            err_line.className = err_line.className + ' line-error';
+
+            $.getScript('//cdn.bootcss.com/prettify/r298/prettify.min.js', function(){
+                prettyPrint();
+
+                // 解决Firefox浏览器一个很诡异的问题
+                // 当代码高亮后，ol的行号莫名其妙的错位
+                // 但是只要刷新li里面的html重新渲染就没有问题了
+                if(window.navigator.userAgent.indexOf('Firefox') >= 0){
+                    ol[0].innerHTML = ol[0].innerHTML;
+                }
+            });
+
+        })();
+    </script>
+    </body>
+</html>
+
+2020-03-12 16:55:53,652 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 16:55:53,653 baseMenu.py[line:25] INFO 404
+2020-03-12 16:56:09,394 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 16:56:09,394 baseMenu.py[line:25] INFO <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>系统发生错误</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
+        /* Base */
+        body {
+            color: #333;
+            font: 16px Verdana, "Helvetica Neue", helvetica, Arial, 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0 20px 20px;
+        }
+        h1{
+            margin: 10px 0 0;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 32px;
+        }
+        h2{
+            color: #4288ce;
+            font-weight: 400;
+            padding: 6px 0;
+            margin: 6px 0 0;
+            font-size: 18px;
+            border-bottom: 1px solid #eee;
+        }
+        h3{
+            margin: 12px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        abbr{
+            cursor: help;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+        a{
+            color: #868686;
+            cursor: pointer;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        .line-error{
+            background: #f8cbcb;
+        }
+
+        .echo table {
+            width: 100%;
+        }
+
+        .echo pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: #f7f7f7;
+            border: 0;
+            border-radius: 3px;
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        .echo pre > pre {
+            padding: 0;
+            margin: 0;
+        }
+    
+        /* Exception Info */
+        .exception {
+            margin-top: 20px;
+        }
+        .exception .message{
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-bottom: 0 none;
+            line-height: 18px;
+            font-size:16px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            font-family: Consolas,"Liberation Mono",Courier,Verdana,"微软雅黑";
+        }
+
+        .exception .code{
+            float: left;
+            text-align: center;
+            color: #fff;
+            margin-right: 12px;
+            padding: 16px;
+            border-radius: 4px;
+            background: #999;
+        }
+        .exception .source-code{
+            padding: 6px;
+            border: 1px solid #ddd;
+
+            background: #f9f9f9;
+            overflow-x: auto;
+
+        }
+        .exception .source-code pre{
+            margin: 0;
+        }
+        .exception .source-code pre ol{
+            margin: 0;
+            color: #4288ce;
+            display: inline-block;
+            min-width: 100%;
+            box-sizing: border-box;
+        font-size:14px;
+            font-family: "Century Gothic",Consolas,"Liberation Mono",Courier,Verdana;
+            padding-left: 56px;
+        }
+        .exception .source-code pre li{
+            border-left: 1px solid #ddd;
+            height: 18px;
+            line-height: 18px;
+        }
+        .exception .source-code pre code{
+            color: #333;
+            height: 100%;
+            display: inline-block;
+            border-left: 1px solid #fff;
+        font-size:14px;
+            font-family: Consolas,"Liberation Mono",Courier,Verdana,"微软雅黑";
+        }
+        .exception .trace{
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-top: 0 none;
+            line-height: 16px;
+        font-size:14px;
+            font-family: Consolas,"Liberation Mono",Courier,Verdana,"微软雅黑";
+        }
+        .exception .trace ol{
+            margin: 12px;
+        }
+        .exception .trace ol li{
+            padding: 2px 4px;
+        }
+        .exception div:last-child{
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        /* Exception Variables */
+        .exception-var table{
+            width: 100%;
+            margin: 12px 0;
+            box-sizing: border-box;
+            table-layout:fixed;
+            word-wrap:break-word;            
+        }
+        .exception-var table caption{
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 6px 0;
+        }
+        .exception-var table caption small{
+            font-weight: 300;
+            display: inline-block;
+            margin-left: 10px;
+            color: #ccc;
+        }
+        .exception-var table tbody{
+            font-size: 13px;
+            font-family: Consolas,"Liberation Mono",Courier,"微软雅黑";
+        }
+        .exception-var table td{
+            padding: 0 6px;
+            vertical-align: top;
+            word-break: break-all;
+        }
+        .exception-var table td:first-child{
+            width: 28%;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .exception-var table td pre{
+            margin: 0;
+        }
+
+        /* Copyright Info */
+        .copyright{
+            margin-top: 24px;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+        }
+
+        /* SPAN elements with the classes below are added by prettyprint. */
+        pre.prettyprint .pln { color: #000 }  /* plain text */
+        pre.prettyprint .str { color: #080 }  /* string content */
+        pre.prettyprint .kwd { color: #008 }  /* a keyword */
+        pre.prettyprint .com { color: #800 }  /* a comment */
+        pre.prettyprint .typ { color: #606 }  /* a type name */
+        pre.prettyprint .lit { color: #066 }  /* a literal value */
+        /* punctuation, lisp open bracket, lisp close bracket */
+        pre.prettyprint .pun, pre.prettyprint .opn, pre.prettyprint .clo { color: #660 }
+        pre.prettyprint .tag { color: #008 }  /* a markup tag name */
+        pre.prettyprint .atn { color: #606 }  /* a markup attribute name */
+        pre.prettyprint .atv { color: #080 }  /* a markup attribute value */
+        pre.prettyprint .dec, pre.prettyprint .var { color: #606 }  /* a declaration; a variable name */
+        pre.prettyprint .fun { color: red }  /* a function name */
+    </style>
+</head>
+<body>
+    <div class="echo">
+            </div>
+        <div class="exception">
+    <div class="message">
+        
+            <div class="info">
+                <div>
+                    <h2>[0]&nbsp;<abbr title="think\exception\HttpException">HttpException</abbr> in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/dispatch/Module.php line 126">Module.php line 126</a></h2>
+                </div>
+                <div><h1>方法不存在:app\front\controller\Rule-&gt;leftMenu22()</h1></div>
+            </div>
+        
+    </div>
+	        <div class="source-code">
+            <pre class="prettyprint lang-php"><ol start="117"><li class="line-117"><code>                : $this-&gt;request-&gt;param();
+</code></li><li class="line-118"><code>                $vars = array_merge($vars, $this-&gt;param);
+</code></li><li class="line-119"><code>            } elseif (is_callable([$instance, '_empty'])) {
+</code></li><li class="line-120"><code>                // 空操作
+</code></li><li class="line-121"><code>                $call    = [$instance, '_empty'];
+</code></li><li class="line-122"><code>                $vars    = [$this-&gt;actionName];
+</code></li><li class="line-123"><code>                $reflect = new ReflectionMethod($instance, '_empty');
+</code></li><li class="line-124"><code>            } else {
+</code></li><li class="line-125"><code>                // 操作不存在
+</code></li><li class="line-126"><code>                throw new HttpException(404, 'method not exists:' . get_class($instance) . '-&gt;' . $action . '()');
+</code></li><li class="line-127"><code>            }
+</code></li><li class="line-128"><code>
+</code></li><li class="line-129"><code>            $this-&gt;app['hook']-&gt;listen('action_begin', $call);
+</code></li><li class="line-130"><code>
+</code></li><li class="line-131"><code>            $data = $this-&gt;app-&gt;invokeReflectMethod($instance, $reflect, $vars);
+</code></li><li class="line-132"><code>
+</code></li><li class="line-133"><code>            return $this-&gt;autoResponse($data);
+</code></li><li class="line-134"><code>        });
+</code></li><li class="line-135"><code>
+</code></li></ol></pre>
+        </div>
+	        <div class="trace">
+            <h2>Call Stack</h2>
+            <ol>
+                <li>in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/dispatch/Module.php line 126">Module.php line 126</a></li>
+                                <li>
+                at <abbr title="think\route\dispatch\Module">Module</abbr>->think\route\dispatch\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>)                </li>
+                                <li>
+                at call_user_func_array(<em>object</em>(<abbr title="Closure">Closure</abbr>), [<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>]) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 185">Middleware.php line 185</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->think\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>))                </li>
+                                <li>
+                at call_user_func(<em>object</em>(<abbr title="Closure">Closure</abbr>), <em>object</em>(<abbr title="think\Request">Request</abbr>)) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 130">Middleware.php line 130</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->dispatch(<em>object</em>(<abbr title="think\Request">Request</abbr>), 'controller') in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/dispatch/Module.php line 136">Module.php line 136</a>                </li>
+                                <li>
+                at <abbr title="think\route\dispatch\Module">Module</abbr>->exec() in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/route/Dispatch.php line 168">Dispatch.php line 168</a>                </li>
+                                <li>
+                at <abbr title="think\route\Dispatch">Dispatch</abbr>->run() in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/App.php line 432">App.php line 432</a>                </li>
+                                <li>
+                at <abbr title="think\App">App</abbr>->think\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>)                </li>
+                                <li>
+                at call_user_func_array(<em>object</em>(<abbr title="Closure">Closure</abbr>), [<em>object</em>(<abbr title="think\Request">Request</abbr>), <em>object</em>(<abbr title="Closure">Closure</abbr>), <em>null</em>]) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 185">Middleware.php line 185</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->think\{closure}(<em>object</em>(<abbr title="think\Request">Request</abbr>))                </li>
+                                <li>
+                at call_user_func(<em>object</em>(<abbr title="Closure">Closure</abbr>), <em>object</em>(<abbr title="think\Request">Request</abbr>)) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/Middleware.php line 130">Middleware.php line 130</a>                </li>
+                                <li>
+                at <abbr title="think\Middleware">Middleware</abbr>->dispatch(<em>object</em>(<abbr title="think\Request">Request</abbr>)) in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/thinkphp/library/think/App.php line 435">App.php line 435</a>                </li>
+                                <li>
+                at <abbr title="think\App">App</abbr>->run() in <a class="toggle" title="/data/www/docs/yxsoft.net/wisdom_project/public/index.php line 21">index.php line 21</a>                </li>
+                            </ol>
+        </div>
+    </div>
+        
+    
+        <div class="exception-var">
+        <h2>Environment Variables</h2>
+                <table>
+                        <caption>GET Data<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>POST Data<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Files<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Cookies<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Session<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>Server/Request Data</caption>
+            <tbody>
+                                <tr>
+                    <td>USER</td>
+                    <td>
+                        www                    </td>
+                </tr>
+                                <tr>
+                    <td>HOME</td>
+                    <td>
+                        /home/www                    </td>
+                </tr>
+                                <tr>
+                    <td>FCGI_ROLE</td>
+                    <td>
+                        RESPONDER                    </td>
+                </tr>
+                                <tr>
+                    <td>SCRIPT_FILENAME</td>
+                    <td>
+                        /www/docs/yxsoft.net/wisdom_project/public/index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>QUERY_STRING</td>
+                    <td>
+                        s=/front/rule/leftMenu22                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_METHOD</td>
+                    <td>
+                        GET                    </td>
+                </tr>
+                                <tr>
+                    <td>CONTENT_TYPE</td>
+                    <td>
+                        application/x-www-form-urlencoded                    </td>
+                </tr>
+                                <tr>
+                    <td>CONTENT_LENGTH</td>
+                    <td>
+                                            </td>
+                </tr>
+                                <tr>
+                    <td>SCRIPT_NAME</td>
+                    <td>
+                        /index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_URI</td>
+                    <td>
+                        /front/rule/leftMenu22                    </td>
+                </tr>
+                                <tr>
+                    <td>DOCUMENT_URI</td>
+                    <td>
+                        /index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>DOCUMENT_ROOT</td>
+                    <td>
+                        /www/docs/yxsoft.net/wisdom_project/public                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_PROTOCOL</td>
+                    <td>
+                        HTTP/1.1                    </td>
+                </tr>
+                                <tr>
+                    <td>GATEWAY_INTERFACE</td>
+                    <td>
+                        CGI/1.1                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_SOFTWARE</td>
+                    <td>
+                        nginx/1.8.0                    </td>
+                </tr>
+                                <tr>
+                    <td>REMOTE_ADDR</td>
+                    <td>
+                        10.0.86.27                    </td>
+                </tr>
+                                <tr>
+                    <td>REMOTE_PORT</td>
+                    <td>
+                        55393                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_ADDR</td>
+                    <td>
+                        10.0.100.88                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_PORT</td>
+                    <td>
+                        80                    </td>
+                </tr>
+                                <tr>
+                    <td>SERVER_NAME</td>
+                    <td>
+                        *.yxsoft.net                    </td>
+                </tr>
+                                <tr>
+                    <td>REDIRECT_STATUS</td>
+                    <td>
+                        200                    </td>
+                </tr>
+                                <tr>
+                    <td>PHP_ADMIN_VALUE</td>
+                    <td>
+                        open_basedir=/www/docs/yxsoft.net:/usr/local/php56/lib/php:/tmp/                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_HOST</td>
+                    <td>
+                        wisdom_project.yxsoft.net                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_USER_AGENT</td>
+                    <td>
+                        python-requests/2.22.0                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_ACCEPT_ENCODING</td>
+                    <td>
+                        gzip, deflate                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_ACCEPT</td>
+                    <td>
+                        */*                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_CONNECTION</td>
+                    <td>
+                        keep-alive                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_CONTENT_TYPE</td>
+                    <td>
+                        application/x-www-form-urlencoded                    </td>
+                </tr>
+                                <tr>
+                    <td>HTTP_ACCESS_TOKEN</td>
+                    <td>
+                        1cbepl/AYdwsf1HxiXwbUhJRupAtnYzNdr02bMrVEay7OxGOnrXqLdjlpecyRD15NhTMAVs                    </td>
+                </tr>
+                                <tr>
+                    <td>PHP_SELF</td>
+                    <td>
+                        /index.php                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_TIME_FLOAT</td>
+                    <td>
+                        1584003361.0109                    </td>
+                </tr>
+                                <tr>
+                    <td>REQUEST_TIME</td>
+                    <td>
+                        1584003361                    </td>
+                </tr>
+                            </tbody>
+                    </table>
+                <table>
+                        <caption>Environment Variables<small>empty</small></caption>
+                    </table>
+                <table>
+                        <caption>ThinkPHP Constants<small>empty</small></caption>
+                    </table>
+            </div>
+    
+    <div class="copyright">
+        <a title="官方网站" href="http://www.thinkphp.cn">ThinkPHP</a> 
+        <span>V5.1.38 LTS</span> 
+        <span>{ 十年磨一剑-为API开发设计的高性能框架 }</span>
+    </div>
+        <script>
+        var LINE = 126;
+
+        function $(selector, node){
+            var elements;
+
+            node = node || document;
+            if(document.querySelectorAll){
+                elements = node.querySelectorAll(selector);
+            } else {
+                switch(selector.substr(0, 1)){
+                    case '#':
+                        elements = [node.getElementById(selector.substr(1))];
+                        break;
+                    case '.':
+                        if(document.getElementsByClassName){
+                            elements = node.getElementsByClassName(selector.substr(1));
+                        } else {
+                            elements = get_elements_by_class(selector.substr(1), node);
+                        }
+                        break;
+                    default:
+                        elements = node.getElementsByTagName();
+                }
+            }
+            return elements;
+
+            function get_elements_by_class(search_class, node, tag) {
+                var elements = [], eles, 
+                    pattern  = new RegExp('(^|\\s)' + search_class + '(\\s|$)');
+
+                node = node || document;
+                tag  = tag  || '*';
+
+                eles = node.getElementsByTagName(tag);
+                for(var i = 0; i < eles.length; i++) {
+                    if(pattern.test(eles[i].className)) {
+                        elements.push(eles[i])
+                    }
+                }
+
+                return elements;
+            }
+        }
+
+        $.getScript = function(src, func){
+            var script = document.createElement('script');
+            
+            script.async  = 'async';
+            script.src    = src;
+            script.onload = func || function(){};
+            
+            $('head')[0].appendChild(script);
+        }
+
+        ;(function(){
+            var files = $('.toggle');
+            var ol    = $('ol', $('.prettyprint')[0]);
+            var li    = $('li', ol[0]);   
+
+            // 短路径和长路径变换
+            for(var i = 0; i < files.length; i++){
+                files[i].ondblclick = function(){
+                    var title = this.title;
+
+                    this.title = this.innerHTML;
+                    this.innerHTML = title;
+                }
+            }
+
+            // 设置出错行
+            var err_line = $('.line-' + LINE, ol[0])[0];
+            err_line.className = err_line.className + ' line-error';
+
+            $.getScript('//cdn.bootcss.com/prettify/r298/prettify.min.js', function(){
+                prettyPrint();
+
+                // 解决Firefox浏览器一个很诡异的问题
+                // 当代码高亮后，ol的行号莫名其妙的错位
+                // 但是只要刷新li里面的html重新渲染就没有问题了
+                if(window.navigator.userAgent.indexOf('Firefox') >= 0){
+                    ol[0].innerHTML = ol[0].innerHTML;
+                }
+            });
+
+        })();
+    </script>
+    </body>
+</html>
+
+2020-03-12 17:02:57,154 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 17:15:39,760 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 17:15:39,761 baseMenu.py[line:25] INFO 404
+2020-03-12 17:15:48,153 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 17:15:48,153 baseMenu.py[line:25] INFO 404
+2020-03-12 17:27:15,777 baseMenu.py[line:21] INFO 左边菜单栏请求
+2020-03-12 17:27:15,865 baseMenu.py[line:32] INFO 左边菜单栏请求
+2020-03-12 17:27:15,943 baseMenu.py[line:43] INFO 左边菜单栏请求
+2020-03-12 17:27:16,165 baseMenu.py[line:53] INFO 左边菜单栏请求
+2020-03-12 17:27:16,245 baseMenu.py[line:66] INFO 左边菜单栏请求
+2020-03-12 17:28:51,728 baseMenu.py[line:21] INFO 左边菜单栏请求成功
+2020-03-12 17:28:51,814 baseMenu.py[line:32] INFO behavior请求成功
+2020-03-12 17:28:51,895 baseMenu.py[line:43] INFO userInfo请求成功
+2020-03-12 17:28:52,120 baseMenu.py[line:53] INFO toDoBusiness请求成功
+2020-03-12 17:28:52,198 baseMenu.py[line:66] INFO toDoList请求成功
+2020-03-13 09:55:54,899 baseMenu.py[line:21] INFO 左边菜单栏请求成功
+2020-03-13 09:55:54,989 baseMenu.py[line:32] INFO behavior请求成功
+2020-03-13 09:55:55,069 baseMenu.py[line:43] INFO userInfo请求成功
+2020-03-13 09:55:55,398 baseMenu.py[line:53] INFO toDoBusiness请求成功
+2020-03-13 09:55:55,569 baseMenu.py[line:66] INFO toDoList请求成功
+2020-03-13 10:07:18,917 organizationView.py[line:13] INFO 组织架构--部门信息请求成功
+2020-03-13 10:07:19,015 organizationView.py[line:24] INFO 组织架构---人员信息请求成功
+2020-03-13 10:07:19,082 organizationView.py[line:34] INFO 组织架构---岗位列表请求成功
+2020-03-13 10:07:19,157 organizationView.py[line:43] INFO 组织架构---学历信息请求成功
+2020-03-16 10:52:30,998 userView.py[line:21] INFO 员工列表请求成功
+2020-03-16 10:52:31,111 userView.py[line:38] INFO 员工信息请求成功
+2020-03-16 10:55:31,758 contractView.py[line:21] INFO 合同列表请求成功
+2020-03-16 10:55:32,101 contractView.py[line:38] INFO 合同查阅记录请求成功
+2020-03-16 10:55:32,259 contractView.py[line:82] INFO 合同查阅记录请求成功
+2020-03-16 11:04:12,503 contractView.py[line:21] INFO 合同列表请求成功
+2020-03-16 11:04:12,840 contractView.py[line:38] INFO 合同查阅记录请求成功
+2020-03-16 11:04:13,073 contractView.py[line:85] INFO 合同查阅记录请求成功
+2020-03-16 11:19:30,611 buildingView.py[line:21] INFO 楼栋列表请求成功
+2020-03-16 11:19:30,707 buildingView.py[line:63] INFO 员工信息请求成功
+2020-03-16 11:20:35,274 buildingView.py[line:21] INFO 楼栋列表请求成功
+2020-03-16 11:20:35,334 buildingView.py[line:63] INFO 添加楼栋成功
+2020-03-16 11:25:35,712 buildingView.py[line:21] INFO 楼栋列表请求成功
+2020-03-16 11:25:35,781 buildingView.py[line:63] INFO 添加楼栋成功
+2020-03-16 11:27:35,990 buildingView.py[line:21] INFO 楼栋列表请求成功
+2020-03-16 11:27:36,096 buildingView.py[line:63] INFO 添加楼栋成功
+2020-03-16 11:42:53,648 worktypeView.py[line:21] INFO 工种列表请求成功
+2020-03-16 11:42:53,812 worktypeView.py[line:39] INFO 添加工种成功
+2020-03-16 17:32:13,104 technical_disclosure_scheme.py[line:21] INFO 技术交底方案列表请求成功
+2020-03-16 17:32:34,988 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-17 09:50:14,853 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:50:15,052 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:38,138 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:38,219 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:39,339 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:39,399 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:40,323 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:40,383 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:41,236 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:41,304 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:41,837 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:41,895 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:43,750 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:43,818 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:44,282 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:44,335 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:45,049 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:45,105 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:53,059 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:53,140 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:55,478 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:55,532 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:57,572 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:57,648 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:51:59,049 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:51:59,111 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:00,142 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:00,199 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:06,511 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:06,582 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:07,782 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:07,842 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:08,896 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:08,955 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:10,607 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:10,665 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:17,981 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:18,074 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:24,306 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:24,370 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:25,969 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:26,032 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:38,511 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:38,593 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:46,224 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:46,284 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 09:52:55,606 contract_sign_apply_record.py[line:22] INFO 合同签订申请列表请求成功
+2020-03-17 09:52:55,691 contract_sign_apply_record.py[line:50] INFO 添加合同签订申请成功
+2020-03-17 11:25:03,819 labour_services.py[line:22] INFO 劳务公司列表请求成功
+2020-03-17 11:25:34,837 labour_services.py[line:22] INFO 劳务公司列表请求成功
+2020-03-17 11:25:35,016 labour_services.py[line:40] INFO 劳务公司黑名单列表请求成功
+2020-03-17 11:25:35,179 labour_services.py[line:71] INFO 添加劳务公司成功
+2020-03-17 11:26:30,929 labour_services.py[line:22] INFO 劳务公司列表请求成功
+2020-03-17 11:26:31,048 labour_services.py[line:40] INFO 劳务公司黑名单列表请求成功
+2020-03-17 11:26:31,157 labour_services.py[line:71] INFO 添加劳务公司成功
+2020-03-17 16:00:24,241 staffView.py[line:22] INFO 劳务人员列表请求成功
+2020-03-17 16:00:24,374 staffView.py[line:58] INFO 劳务人员黑名单列表请求成功
+2020-03-17 16:00:24,501 staffView.py[line:90] INFO 添加劳务人员成功
+2020-03-17 16:01:01,252 staffView.py[line:22] INFO 劳务人员列表请求成功
+2020-03-17 16:01:01,379 staffView.py[line:58] INFO 劳务人员黑名单列表请求成功
+2020-03-17 16:01:01,471 staffView.py[line:90] INFO 添加劳务人员成功
+2020-03-18 09:59:04,169 meterialtypeView.py[line:22] INFO 材料分类列表请求成功
+2020-03-18 09:59:04,308 meterialtypeView.py[line:39] INFO 添加一级材料分类成功
+2020-03-18 10:06:44,475 warehouseView.py[line:22] INFO 仓库列表请求成功
+2020-03-18 10:06:44,659 warehouseView.py[line:44] INFO 添加仓库成功
+2020-03-18 10:31:46,346 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:32:05,198 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:32:05,874 meterial.py[line:48] INFO 添加材料成功
+2020-03-18 10:36:28,990 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:37:00,155 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:38:48,012 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:39:08,014 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:39:18,700 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:42:12,442 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:42:39,208 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:46:31,764 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:46:43,364 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:46:51,291 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:48:42,869 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:48:55,334 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:49:39,515 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:49:47,669 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:49:55,346 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:50:03,145 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:50:20,990 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:58:43,701 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:59:36,988 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 10:59:58,585 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:00:40,635 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:00:51,182 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:01:04,828 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:01:32,741 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:01:45,852 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:01:59,666 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:03:22,705 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:03:51,667 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 11:04:25,390 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:42:55,230 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:42:55,560 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:44:45,825 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:44:46,144 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:45:24,534 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:45:24,882 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:47:57,731 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:47:57,972 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:47:58,107 meterial.py[line:70] INFO 新增材料审批详情页请求成功
+2020-03-18 13:47:58,442 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-18 13:47:59,125 meterial.py[line:112] INFO 添加材料成功
+2020-03-19 10:34:33,937 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-19 10:34:34,195 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-19 10:34:34,314 meterial.py[line:70] INFO 新增材料审批详情页请求成功
+2020-03-19 10:34:34,560 meterial.py[line:22] INFO 材料列表请求成功
+2020-03-19 10:34:34,674 meterial.py[line:112] INFO 添加材料审批通过
+2020-03-19 10:35:33,972 warehouseView.py[line:22] INFO 仓库列表请求成功
+2020-03-19 10:35:34,180 warehouseView.py[line:44] INFO 添加仓库成功
+2020-03-19 10:37:37,490 warehouseView.py[line:22] INFO 仓库列表请求成功
+2020-03-19 10:37:37,598 warehouseView.py[line:46] INFO 添加仓库成功
+2020-03-19 10:37:53,063 warehouseView.py[line:22] INFO 仓库列表请求成功
+2020-03-19 10:37:53,251 warehouseView.py[line:46] INFO 添加仓库成功
+2020-03-19 10:45:58,661 meterial.py[line:57] INFO 添加材料成功
+2020-03-19 10:46:18,780 meterial.py[line:57] INFO 添加材料成功
+2020-03-19 10:47:23,321 meterial.py[line:62] INFO 添加材料失败
+2020-03-19 10:48:55,454 meterial.py[line:67] INFO 500
+2020-03-19 10:49:17,683 meterial.py[line:62] INFO 添加材料失败
+2020-03-19 10:50:19,693 meterial.py[line:67] INFO 500
+2020-03-19 10:50:56,412 meterial.py[line:62] INFO 添加材料失败，status_code：500
+2020-03-19 10:58:05,028 meterial.py[line:69] INFO 添加材料成功
+2020-03-19 10:58:43,905 meterial.py[line:69] INFO 添加材料成功
+2020-03-19 10:59:21,532 meterial.py[line:69] INFO 添加材料成功
+2020-03-19 11:00:03,632 meterial.py[line:62] INFO 添加材料失败，status_code：500
+2020-03-19 11:00:27,533 meterial.py[line:69] INFO 添加材料成功
+2020-03-19 11:03:02,907 meterial.py[line:62] INFO 添加材料失败，status_code：404
+2020-03-19 11:12:24,142 meterial.py[line:74] INFO 500
+2020-03-19 11:24:13,634 meterial.py[line:152] INFO start run test case...
+2020-03-19 11:24:13,837 meterial.py[line:76] INFO 500
+2020-03-19 11:27:04,448 meterial.py[line:153] INFO start run test case...
+2020-03-19 11:27:04,644 meterial.py[line:77] INFO 500
+2020-03-19 11:27:27,184 meterial.py[line:153] INFO start run test case...
+2020-03-19 11:27:27,356 meterial.py[line:77] INFO 500
+2020-03-19 11:28:03,598 meterial.py[line:153] INFO start run test case...
+2020-03-19 11:28:03,712 meterial.py[line:65] INFO 添加材料失败，status_code：500
+2020-03-19 11:28:16,305 meterial.py[line:153] INFO start run test case...
+2020-03-19 11:28:16,493 meterial.py[line:77] INFO 500
+2020-03-19 11:29:12,546 meterial.py[line:153] INFO start run test case...
+2020-03-19 11:29:12,781 meterial.py[line:77] INFO 500
+2020-03-19 11:29:25,180 meterial.py[line:153] INFO start run test case...
+2020-03-19 11:29:25,411 meterial.py[line:77] INFO 500
+2020-03-19 14:06:56,265 meterial.py[line:153] INFO start run test case...
+2020-03-19 14:06:57,424 meterial.py[line:77] INFO 500
+2020-03-19 14:08:04,401 meterial.py[line:154] INFO start run test case...
+2020-03-19 14:08:05,611 meterial.py[line:78] INFO 500
+2020-03-19 14:10:22,926 meterial.py[line:154] INFO start run test case...
+2020-03-19 14:14:17,168 meterial.py[line:154] INFO start run test case...
+2020-03-19 14:14:17,355 meterial.py[line:78] INFO 500
+2020-03-19 14:16:51,482 meterial.py[line:154] INFO start run test case...
+2020-03-19 14:16:51,931 meterial.py[line:78] INFO 500
+2020-03-19 14:17:16,571 meterial.py[line:154] INFO start run test case...
+2020-03-19 14:17:16,687 meterial.py[line:78] INFO 500
+2020-03-19 14:18:25,179 meterial.py[line:154] INFO start run test case...
+2020-03-19 14:18:25,385 meterial.py[line:78] INFO 500
+2020-03-19 14:19:14,695 meterial.py[line:155] INFO start run test case...
+2020-03-19 14:19:14,881 meterial.py[line:79] INFO 500
+2020-03-19 14:20:20,036 meterial.py[line:146] INFO start run test case...
+2020-03-19 14:20:20,230 meterial.py[line:70] INFO 500
+2020-03-19 14:20:36,778 meterial.py[line:146] INFO start run test case...
+2020-03-19 14:20:36,901 meterial.py[line:68] INFO post请求出现了异525常：'Response' object has no attribute 'response'
+2020-03-19 14:20:36,901 meterial.py[line:70] INFO 500
+2020-03-19 14:21:23,177 meterial.py[line:146] INFO start run test case...
+2020-03-19 14:21:23,309 meterial.py[line:68] INFO post请求出现了异525常：'Response' object has no attribute 'response'
+2020-03-19 14:21:23,309 meterial.py[line:70] INFO 500
+2020-03-19 14:22:43,495 meterial.py[line:146] INFO start run test case...
+2020-03-19 14:22:43,627 meterial.py[line:68] INFO post请求出现了异525常：'Response' object has no attribute 'response'
+2020-03-19 14:22:43,627 meterial.py[line:70] INFO 500
+2020-03-19 14:22:49,009 meterial.py[line:146] INFO start run test case...
+2020-03-19 14:22:49,073 meterial.py[line:62] INFO 添加材料成功
+2020-03-19 14:25:34,923 meterial.py[line:146] INFO start run test case...
+2020-03-19 14:25:35,065 meterial.py[line:68] INFO post请求出现了异525常：'Response' object has no attribute 'response'
+2020-03-19 14:25:35,066 meterial.py[line:70] INFO 500
+2020-03-19 15:16:32,185 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:16:33,397 meterial.py[line:68] INFO post请求出现了异525常：'Response' object has no attribute 'response'
+2020-03-19 15:16:33,398 meterial.py[line:70] INFO 500
+2020-03-19 15:49:39,892 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:49:41,097 meterial.py[line:70] INFO 500
+2020-03-19 15:50:16,706 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:50:16,842 meterial.py[line:59] INFO 添加-----成功
+2020-03-19 15:50:16,842 meterial.py[line:70] INFO 500
+2020-03-19 15:50:34,586 meterial.py[line:147] INFO start run test case...
+2020-03-19 15:50:34,781 meterial.py[line:64] INFO 添加-----成功
+2020-03-19 15:50:34,782 meterial.py[line:71] INFO 500
+2020-03-19 15:50:57,315 meterial.py[line:147] INFO start run test case...
+2020-03-19 15:50:57,495 meterial.py[line:71] INFO 500
+2020-03-19 15:51:14,723 meterial.py[line:147] INFO start run test case...
+2020-03-19 15:51:14,952 meterial.py[line:64] INFO 添加-----失败
+2020-03-19 15:51:14,952 meterial.py[line:71] INFO 500
+2020-03-19 15:51:28,309 meterial.py[line:147] INFO start run test case...
+2020-03-19 15:51:28,485 meterial.py[line:64] INFO 添加-----失败
+2020-03-19 15:51:28,486 meterial.py[line:71] INFO 500
+2020-03-19 15:51:53,891 meterial.py[line:147] INFO start run test case...
+2020-03-19 15:51:54,013 meterial.py[line:64] INFO 添加-----失败
+2020-03-19 15:51:54,014 meterial.py[line:67] INFO 添加材料失败，status_code：500
+2020-03-19 15:52:09,446 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:52:09,734 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 15:52:16,146 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:52:16,208 meterial.py[line:62] INFO 添加材料成功
+2020-03-19 15:52:35,551 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:52:35,670 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 15:54:47,666 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:54:47,792 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 15:54:56,335 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:54:56,453 meterial.py[line:62] INFO 添加材料成功
+2020-03-19 15:55:01,558 meterial.py[line:146] INFO start run test case...
+2020-03-19 15:55:01,680 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:00:11,457 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:00:11,793 meterial.py[line:70] INFO 500
+2020-03-19 16:07:30,401 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:07:30,515 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:07:49,572 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:07:49,795 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:07:57,112 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:07:57,235 meterial.py[line:62] INFO 添加材料成功
+2020-03-19 16:08:10,899 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:08:11,144 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:08:19,375 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:08:19,440 meterial.py[line:62] INFO 添加材料成功
+2020-03-19 16:08:36,152 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:08:36,350 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:23:38,112 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:23:38,242 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:24:01,501 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:24:01,618 meterial.py[line:64] INFO 22
+2020-03-19 16:24:01,619 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:24:10,749 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:24:10,811 meterial.py[line:62] INFO 25252添加材料成功
+2020-03-19 16:24:30,865 meterial.py[line:146] INFO start run test case...
+2020-03-19 16:24:30,986 meterial.py[line:64] INFO 22
+2020-03-19 16:24:30,986 meterial.py[line:66] INFO 添加材料失败，status_code：500
+2020-03-19 16:24:50,239 meterial.py[line:147] INFO start run test case...
+2020-03-19 16:24:50,376 meterial.py[line:64] INFO 22
+2020-03-19 16:24:50,376 meterial.py[line:67] INFO 添加材料失败，status_code：500
+2020-03-19 16:24:59,480 meterial.py[line:147] INFO start run test case...
+2020-03-19 16:24:59,552 meterial.py[line:62] INFO 添加材料成功
+2020-03-19 16:25:18,121 meterial.py[line:147] INFO start run test case...
+2020-03-19 16:25:18,321 meterial.py[line:67] INFO 添加材料失败，status_code：500
+2020-03-19 16:43:37,376 meterial.py[line:147] INFO start run test case...
+2020-03-19 16:43:37,522 meterial.py[line:71] INFO 500
+2020-03-19 16:51:31,108 meterial.py[line:148] INFO start run test case...
+2020-03-19 16:51:31,245 meterial.py[line:68] INFO 添加材料失败，status_code：500
+2020-03-19 16:52:10,375 meterial.py[line:148] INFO start run test case...
+2020-03-19 16:52:10,494 meterial.py[line:68] INFO 添加材料失败，status_code：500
+2020-03-19 17:15:19,546 meterial.py[line:150] INFO start run test case...
+2020-03-19 17:15:19,676 meterial.py[line:69] INFO 添加材料失败，status_code：500
+2020-03-19 17:33:58,383 meterial.py[line:153] INFO start run test case...
+2020-03-19 17:35:48,652 meterial.py[line:164] INFO start run test case...
+2020-03-19 17:35:48,781 meterial.py[line:87] INFO 添加材料失败，status_code：500
+2020-03-19 17:36:26,112 meterial.py[line:164] INFO start run test case...
+2020-03-19 17:36:26,303 meterial.py[line:87] INFO 添加材料失败，status_code：500
+2020-03-19 17:36:40,674 meterial.py[line:164] INFO start run test case...
+2020-03-19 17:36:40,794 meterial.py[line:87] INFO 添加材料失败，status_code：500
+2020-03-19 17:37:48,594 meterial.py[line:164] INFO start run test case...
+2020-03-19 17:37:48,727 meterial.py[line:87] INFO 添加材料失败，status_code：500
+2020-03-19 18:08:27,159 meterial.py[line:153] INFO start run test case...
+2020-03-19 18:09:12,200 meterial.py[line:154] INFO start run test case...
+2020-03-19 18:09:12,386 meterial.py[line:76] INFO 500
+2020-03-19 18:09:57,321 meterial.py[line:154] INFO start run test case...
+2020-03-19 18:09:57,448 meterial.py[line:76] INFO 500
