@@ -6,7 +6,7 @@ import logging.config
 CON_LOG='../config/log.conf'
 logging.config.fileConfig(CON_LOG)
 logging=logging.getLogger()
-class baseMebu:
+class BaseMenu:
     def leftMenu(self):
         url = base_url + '/rule/leftMenu'
 
@@ -18,16 +18,15 @@ class baseMebu:
         # print(r.json())
         try:
             res = requests.get(url, headers=session_headers)
-            if res.status_code == 200:
-
-                logging.info('左边菜单栏请求成功')
-            else:
-                logging.info('左边菜单栏请求失败')
-            # print(res.json())
         except Exception as e:
             print("post请求出现了异常：{0}".format(e))
             logging.info(res.status_code)
-
+        else:
+            msg = res.json()
+            logging.info(msg['msg'])
+            self.assertEqual(200, res.status_code)
+            self.assertIn('角色列表', msg['msg'])
+            logging.info('leftMenu请求成功')
             # print('post请求出现了异常')
     def behavior(self):
         url = base_url + '/rule/behavior'
@@ -38,6 +37,12 @@ class baseMebu:
         except Exception as e:
             print("post请求出现了异常：{0}".format(e))
             logging.info(res.status_code)
+        else:
+            msg = res.json()
+            logging.info(msg['msg'])
+            self.assertEqual(200, res.status_code)
+            self.assertIn('操作列表', msg['msg'])
+            logging.info('behavior请求成功')
 
             # print('post请求出现了异常')
     def userInfo(self):
@@ -49,6 +54,12 @@ class baseMebu:
         except Exception as e:
             print("post请求出现了异常：{0}".format(e))
             logging.info(res.status_code)
+        else:
+            msg = res.json()
+            logging.info(msg['msg'])
+            self.assertEqual(200, res.status_code)
+            self.assertIn('用户信息', msg['msg'])
+            logging.info('/user/info请求成功')
 
     def toDoBusiness(self):
         url = base_url + '/index/toDoBusiness'
@@ -57,8 +68,14 @@ class baseMebu:
             logging.info('toDoBusiness请求成功')
             # print(res.json())
         except Exception as e:
-            print("post请求出现了异常：{0}".format(e))
-            logging.info(res.status_code)
+            logging.info("post请求出现了异常：{0}".format(e))
+            # logging.info(res.status_code)
+        else:
+            msg = res.json()
+            logging.info(msg['msg'])
+            self.assertEqual(200, res.status_code)
+            self.assertIn('获取数据成功', msg['msg'])
+            logging.info('/index/toDoBusiness请求成功')
     # print('post请求出现了异常')
 
 
@@ -72,13 +89,19 @@ class baseMebu:
         except Exception as e:
             print("post请求出现了异常：{0}".format(e))
             logging.info(res.status_code)
+        else:
+            msg = res.json()
+            logging.info(msg['msg'])
+            self.assertEqual(200, res.status_code)
+            self.assertIn('获取数据成功', msg['msg'])
+            logging.info('/index/toDoList请求成功')
 
 
 # print('post请求出现了异常')
 
 
 if __name__ == '__main__':
-    l = baseMebu()
+    l = BaseMenu()
     l.leftMenu()
     l.behavior()
     l.userInfo()

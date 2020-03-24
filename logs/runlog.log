@@ -1439,3 +1439,119 @@
 2020-03-19 18:09:12,386 meterial.py[line:76] INFO 500
 2020-03-19 18:09:57,321 meterial.py[line:154] INFO start run test case...
 2020-03-19 18:09:57,448 meterial.py[line:76] INFO 500
+2020-03-24 14:11:24,192 run.py[line:31] INFO start run test case...
+2020-03-24 14:11:24,404 test.py[line:48] INFO 200
+2020-03-24 14:11:52,444 run.py[line:31] INFO start run test case...
+2020-03-24 14:11:52,666 test.py[line:48] INFO 200
+2020-03-24 14:12:50,757 run.py[line:31] INFO start run test case...
+2020-03-24 14:13:49,399 run.py[line:31] INFO start run test case...
+2020-03-24 14:14:45,540 run.py[line:31] INFO start run test case...
+2020-03-24 14:17:25,925 run.py[line:31] INFO start run test case...
+2020-03-24 14:17:26,154 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 14:17:39,600 test.py[line:62] INFO 百度请求报错
+2020-03-24 15:20:06,361 technical_disclosure_scheme.py[line:21] INFO 技术交底方案列表请求成功
+2020-03-24 15:20:30,291 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:22:02,815 technical_disclosure_scheme.py[line:21] INFO 技术交底方案列表请求成功
+2020-03-24 15:22:26,294 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:22:28,485 run.py[line:34] INFO start run test case...
+2020-03-24 15:22:28,986 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:22:29,137 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:23:54,224 run.py[line:34] INFO start run test case...
+2020-03-24 15:23:54,617 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:23:54,767 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:24:18,643 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:28:57,345 run.py[line:34] INFO start run test case...
+2020-03-24 15:28:57,688 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:28:57,809 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:29:22,415 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:31:18,489 run.py[line:34] INFO start run test case...
+2020-03-24 15:31:18,709 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:31:18,858 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:31:19,032 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:31:25,316 run.py[line:34] INFO start run test case...
+2020-03-24 15:31:25,508 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:31:25,650 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:31:25,787 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:31:42,463 run.py[line:34] INFO start run test case...
+2020-03-24 15:31:42,707 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:31:42,804 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:31:42,870 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:32:07,576 run.py[line:34] INFO start run test case...
+2020-03-24 15:32:07,994 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:32:08,111 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:32:08,173 technical_disclosure_scheme.py[line:47] INFO 添加技术交底方案成功
+2020-03-24 15:33:53,767 run.py[line:34] INFO start run test case...
+2020-03-24 15:33:54,179 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:33:54,323 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:34:09,044 run.py[line:34] INFO start run test case...
+2020-03-24 15:34:09,483 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:34:09,615 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:34:44,828 run.py[line:34] INFO start run test case...
+2020-03-24 15:34:45,082 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:34:45,219 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:37:18,338 run.py[line:34] INFO start run test case...
+2020-03-24 15:37:18,674 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 15:37:18,789 test.py[line:65] INFO 百度请求成功
+2020-03-24 15:37:18,862 technical_disclosure_scheme.py[line:55] INFO 添加技术交底方案成功
+2020-03-24 16:17:10,633 run.py[line:34] INFO start run test case...
+2020-03-24 16:17:11,055 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:17:11,168 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:17:12,246 technical_disclosure_scheme.py[line:55] INFO 添加技术交底方案成功33
+2020-03-24 16:18:49,700 run.py[line:34] INFO start run test case...
+2020-03-24 16:18:49,957 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:18:50,067 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:18:50,067 technical_disclosure_scheme.py[line:30] INFO {'sub_project_id': '', 'contract_id': 4, 'building_id': 15, 'plan_time': '2020-03-24', 'type': 1, 'modify_ids': '', 'description': 'description00', 'page_num': 1, 'files': '[{"file_name":"q.doc","file_ext":"doc","width":0,"height":0,"url":"http://wisdom-youxuan-dev.oss-cn-chengdu.aliyuncs.com/file/b1c1e9d22380c8c74502a3e1d68def4f.doc"}]', 'labour_contract_id': ''}
+2020-03-24 16:18:51,149 technical_disclosure_scheme.py[line:55] INFO 添加技术交底方案成功33
+2020-03-24 16:20:26,552 run.py[line:34] INFO start run test case...
+2020-03-24 16:20:26,950 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:20:27,100 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:20:50,224 technical_disclosure_scheme.py[line:55] INFO 添加技术交底方案成功33
+2020-03-24 16:21:09,486 run.py[line:34] INFO start run test case...
+2020-03-24 16:21:09,887 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:21:10,033 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:21:32,115 technical_disclosure_scheme.py[line:55] INFO 添加技术交底方案成功33
+2020-03-24 16:24:07,874 run.py[line:34] INFO start run test case...
+2020-03-24 16:24:08,296 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:24:08,429 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:24:08,509 technical_disclosure_scheme.py[line:55] INFO 添加技术交底方案成功33
+2020-03-24 16:24:19,298 run.py[line:34] INFO start run test case...
+2020-03-24 16:24:19,683 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:24:19,801 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:24:19,875 technical_disclosure_scheme.py[line:55] INFO 添加技术交底方案成功33
+2020-03-24 16:29:00,779 run.py[line:34] INFO start run test case...
+2020-03-24 16:29:01,209 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:29:01,355 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:29:01,430 technical_disclosure_scheme.py[line:55] INFO {"msg":"\u8bf7\u9009\u62e9\u5408\u540c","status":0,"data":{}}
+2020-03-24 16:29:01,430 technical_disclosure_scheme.py[line:56] INFO 添加技术交底方案成功33
+2020-03-24 16:29:15,196 run.py[line:34] INFO start run test case...
+2020-03-24 16:29:15,626 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:29:15,752 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:29:15,813 technical_disclosure_scheme.py[line:55] INFO {'msg': '请选择合同', 'status': 0, 'data': {}}
+2020-03-24 16:29:15,813 technical_disclosure_scheme.py[line:56] INFO 添加技术交底方案成功33
+2020-03-24 16:29:59,101 run.py[line:34] INFO start run test case...
+2020-03-24 16:29:59,498 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:29:59,618 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:29:59,682 technical_disclosure_scheme.py[line:56] INFO 请选择合同
+2020-03-24 16:29:59,682 technical_disclosure_scheme.py[line:57] INFO 添加技术交底方案成功33
+2020-03-24 16:31:07,358 run.py[line:34] INFO start run test case...
+2020-03-24 16:31:07,571 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:31:07,708 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:31:07,790 technical_disclosure_scheme.py[line:56] INFO 请选择合同
+2020-03-24 16:31:34,422 run.py[line:34] INFO start run test case...
+2020-03-24 16:31:34,847 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:31:34,961 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:31:35,026 technical_disclosure_scheme.py[line:56] INFO 请选择合同
+2020-03-24 16:31:35,027 technical_disclosure_scheme.py[line:59] INFO 添加技术交底方案成功33
+2020-03-24 16:32:41,885 run.py[line:34] INFO start run test case...
+2020-03-24 16:32:42,565 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:32:42,693 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:32:42,768 technical_disclosure_scheme.py[line:56] INFO 请选择合同
+2020-03-24 16:33:41,259 run.py[line:34] INFO start run test case...
+2020-03-24 16:33:41,461 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:33:41,610 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:34:04,233 technical_disclosure_scheme.py[line:56] INFO 提交成功
+2020-03-24 16:34:04,234 technical_disclosure_scheme.py[line:59] INFO 添加技术交底方案成功33
+2020-03-24 16:35:46,502 run.py[line:34] INFO start run test case...
+2020-03-24 16:35:46,705 test.py[line:48] INFO 淘宝请求成功
+2020-03-24 16:35:46,863 test.py[line:65] INFO 百度请求成功
+2020-03-24 16:35:46,937 technical_disclosure_scheme.py[line:56] INFO plan_time必须使用日期格式 Y-m-d

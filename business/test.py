@@ -10,44 +10,59 @@
 '''
 #3.导入requests和unittest模块
 import requests
+import logging
+import logging.config
 import unittest,time,logging
-from BSTestRunner import BSTestRunner
+from base.base import session_headers
+CON_LOG='../config/log.conf'
+logging.config.fileConfig(CON_LOG)
+logging=logging.getLogger()
 #4.编写测试用例和断言
 class TestTaobao(unittest.TestCase):
     '''测试淘宝接口'''       # 此注释将展示到测试报告的测试组类
     def test_taobao(self):
         '''查询淘宝首页'''         # 此注释将展示到测试报告的用例标题
         url = "https://www.taobao.com"
+        #
+        #
+        # r = requests.get(url)
+        # print(r.status_code)     # 获取返回的结果
+        # # result = r.json()['code'] #获取状态码
+        # # print(result)
+        # # 断言
+        # self.assertEqual(200, r.status_code)
+        # self.assertIn('msg', r.text)
+        # self.assertTrue('淘宝'in r.text)
+        try:
+            res = requests.get(url,
+                               headers=session_headers
+                                )
+        except Exception as e:
+            # logging.info("post请求出现了异525常：{0}".format(e))
+            # self.assertFalse(0)
+
+            logging.info('淘宝请求有问题')
+            self.assertEqual(200, res.status_code)
+        else:
+            print(44)
+            logging.info('淘宝请求成功')
+            self.assertEqual(200, res.status_code)
+
+    def test_baidu(self):
+        '''查询百度首页'''  # 此注释将展示到测试报告的用例标题
+        url = "https://www.baidu.com"
+
+        try:
+            res = requests.get(url,
+                               headers=session_headers
+                                )
+        except Exception as e:
+            # logging.info("post请求出现了异525常：{0}".format(e))
+            # self.assertFalse(0)
+            logging.info('百度请求报错')
+            self.assertEqual(200, res.status_code)
+        else:
+            logging.info('百度请求成功')
+            self.assertEqual(200, res.status_code)
 
 
-        r = requests.get(url)
-        print(r.status_code)     # 获取返回的结果
-        # result = r.json()['code'] #获取状态码
-        # print(result)
-        # 断言
-        self.assertEqual(200, r.status_code)
-        self.assertIn('msg', r.text)
-        self.assertTrue('33淘宝'in r.text)
-
-
-if __name__ == "__main__":
-    report_dir = '../reports'
-
-    # 未按顺序执行测试用例
-    # discover=unittest.defaultTestLoader.discover(test_dir,pattern='test_login.py')
-
-    # 测试套件，定义测试用例执行顺序
-    suite = unittest.TestSuite()
-    suite.addTest(TestTaobao("test_taobao"))
-    runner = unittest.TextTestRunner()
-
-    now = time.strftime('%Y-%m-%d %H_%M_%S')
-    report_name = report_dir + '/' + now + ' test_report.html'
-
-    with open(report_name, 'wb') as f:
-        runner = BSTestRunner(stream=f, title='ShortVideo Test Report',
-                              description='ShortVideo Android app test report')
-        logging.info('start run test case...')
-        # runner.run(discover)
-
-        runner.run(suite)

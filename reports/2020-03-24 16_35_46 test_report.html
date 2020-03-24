@@ -150,9 +150,9 @@ function showOutput(id, name) {
 <div class="container">
     <div class='heading'>
 <h1>ShortVideo Test Report</h1>
-<p><strong>Start Time:</strong> 2020-03-19 18:09:57</p>
-<p><strong>Duration:</strong> 0:00:00.128007</p>
-<p><strong>Status:</strong> <span class="text text-danger">Failure <strong>1</strong></span></p>
+<p><strong>Start Time:</strong> 2020-03-24 16:35:46</p>
+<p><strong>Duration:</strong> 0:00:00.437025</p>
+<p><strong>Status:</strong> <span class="text text-success">Pass <strong>2</strong></span> <span class="text text-danger">Failure <strong>1</strong></span></p>
 
 <p class='description'>ShortVideo Android app test report</p>
 </div>
@@ -177,34 +177,96 @@ function showOutput(id, name) {
     </thead>
     <tbody>
         
-<tr class='text text-danger'>
-    <td>MeterialView</td>
-    <td>1</td>
+<tr class='text text-success'>
+    <td>case.test.TestTaobao: 测试淘宝接口</td>
+    <td>2</td>
+    <td>2</td>
     <td>0</td>
-    <td>1</td>
     <td>0</td>
-    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',2)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='text text-success'>
-    <td class='text text-danger'><div class='testcase'>test_meterial_add</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_taobao: 查询淘宝首页</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        fail</a>
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: Traceback (most recent call last):
-  File "F:/测试/软件/我要自学/wisdomApi/business/meterial.py", line 77, in test_meterial_add
-    self.assertEqual(200, res.status_code)
-AssertionError: 200 != 500
+pt1.1: 44
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_baidu: 查询百度首页</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 44
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-danger'>
+    <td>case.test_technical_disclosure_scheme.TechnicalDisclosureScheme2: 测试技术交底与方案接口</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='text text-success'>
+    <td class='text text-danger'><div class='testcase'>test_technical_disclosure_scheme_add: 测试添加技术交底与方案表单接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        fail</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: 44
+Traceback (most recent call last):
+  File "F:\测试\软件\我要自学\wisdomApi\case\test_technical_disclosure_scheme.py", line 25, in test_technical_disclosure_scheme_add
+    t.technical_disclosure_scheme_add(data)
+  File "F:\测试\软件\我要自学\wisdomApi\business\technical_disclosure_scheme.py", line 58, in technical_disclosure_scheme_add
+    self.assertIn('提交成功',msg['msg'])
+AssertionError: '提交成功' not found in 'plan_time必须使用日期格式 Y-m-d'
 
 
         </pre>
@@ -218,8 +280,8 @@ AssertionError: 200 != 500
     <tfoot>
         <tr id='total_row'>
             <td>Total</td>
-            <td>1</td>
-            <td class="text text-success">0</td>
+            <td>3</td>
+            <td class="text text-success">2</td>
             <td class="text text-danger">1</td>
             <td class="text text-warning">0</td>
             <td>&nbsp;</td>

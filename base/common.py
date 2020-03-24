@@ -11,3 +11,4 @@ class Common:
             logging.info('添加材料成功')
         else:
             logging.info('添加材料失败，status_code：%d' % (status_code))
+
