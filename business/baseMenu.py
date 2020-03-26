@@ -1,12 +1,13 @@
 # coding: utf-8
 from base.base import base_url,session_headers
-import requests,json
+import requests,json,unittest
 import logging
+from requests import exceptions
 import logging.config
 CON_LOG='../config/log.conf'
 logging.config.fileConfig(CON_LOG)
 logging=logging.getLogger()
-class BaseMenu:
+class BaseMenu(unittest.TestCase):
     def leftMenu(self):
         url = base_url + '/rule/leftMenu'
 
@@ -18,9 +19,14 @@ class BaseMenu:
         # print(r.json())
         try:
             res = requests.get(url, headers=session_headers)
-        except Exception as e:
-            print("post请求出现了异常：{0}".format(e))
-            logging.info(res.status_code)
+            res.raise_for_status()  # 状态不是200会抛异常
+        except exceptions.Timeout as e:  # 超时异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
+        except exceptions.HTTPError as e:  # 状态500 进入该异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
+
         else:
             msg = res.json()
             logging.info(msg['msg'])
@@ -32,11 +38,13 @@ class BaseMenu:
         url = base_url + '/rule/behavior'
         try:
             res = requests.get(url, headers=session_headers)
-            logging.info('behavior请求成功')
-            # print(res.json())
-        except Exception as e:
-            print("post请求出现了异常：{0}".format(e))
-            logging.info(res.status_code)
+            res.raise_for_status()  # 状态不是200会抛异常
+        except exceptions.Timeout as e:  # 超时异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
+        except exceptions.HTTPError as e:  # 状态500 进入该异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
         else:
             msg = res.json()
             logging.info(msg['msg'])
@@ -49,11 +57,13 @@ class BaseMenu:
         url = base_url + '/user/info'
         try:
             res = requests.get(url, headers=session_headers)
-            logging.info('userInfo请求成功')
-            # print(res.json())
-        except Exception as e:
-            print("post请求出现了异常：{0}".format(e))
-            logging.info(res.status_code)
+            res.raise_for_status()  # 状态不是200会抛异常
+        except exceptions.Timeout as e:  # 超时异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
+        except exceptions.HTTPError as e:  # 状态500 进入该异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
         else:
             msg = res.json()
             logging.info(msg['msg'])
@@ -65,11 +75,13 @@ class BaseMenu:
         url = base_url + '/index/toDoBusiness'
         try:
             res = requests.get(url, headers=session_headers)
-            logging.info('toDoBusiness请求成功')
-            # print(res.json())
-        except Exception as e:
-            logging.info("post请求出现了异常：{0}".format(e))
-            # logging.info(res.status_code)
+            res.raise_for_status()  # 状态不是200会抛异常
+        except exceptions.Timeout as e:  # 超时异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
+        except exceptions.HTTPError as e:  # 状态500 进入该异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
         else:
             msg = res.json()
             logging.info(msg['msg'])
@@ -84,11 +96,13 @@ class BaseMenu:
         url = base_url + '/index/toDoList'
         try:
             res = requests.get(url, headers=session_headers)
-            logging.info('toDoList请求成功')
-            # print(res.json())
-        except Exception as e:
-            print("post请求出现了异常：{0}".format(e))
-            logging.info(res.status_code)
+            res.raise_for_status()  # 状态不是200会抛异常
+        except exceptions.Timeout as e:  # 超时异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
+        except exceptions.HTTPError as e:  # 状态500 进入该异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
         else:
             msg = res.json()
             logging.info(msg['msg'])

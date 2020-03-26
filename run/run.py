@@ -11,6 +11,7 @@ test_dir='../case'
 report_dir='../reports'
 
 from case.test_technical_disclosure_scheme import TechnicalDisclosureScheme
+from case.test_baseMenu import TestBaseMenu
 # from business.technical_disclosure_scheme import technicalDisclosureSchemeView
 
 # 未按顺序执行测试用例
@@ -18,8 +19,18 @@ from case.test_technical_disclosure_scheme import TechnicalDisclosureScheme
 
 # 测试套件，定义测试用例执行顺序
 suite = unittest.TestSuite()
+
+# 技术交底与方案
 suite.addTest(TechnicalDisclosureScheme('test_technical_disclosure_scheme_add'))
 suite.addTest(TechnicalDisclosureScheme("test_technical_disclosure_scheme_list"))
+suite.addTest(TechnicalDisclosureScheme("test_technical_disclosure_scheme_approval"))
+
+suite.addTest(TestBaseMenu('test_base_menu'))
+suite.addTest(TestBaseMenu('test_behavior'))
+suite.addTest(TestBaseMenu('test_user_info'))
+suite.addTest(TestBaseMenu('test_toDoBusiness'))
+suite.addTest(TestBaseMenu('test_toDoList'))
+
 # suite.addTest(technicalDisclosureSchemeView("test_technical_disclosure_scheme_add"))
 
 runner = unittest.TextTestRunner()

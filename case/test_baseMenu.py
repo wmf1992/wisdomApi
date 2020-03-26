@@ -32,3 +32,6 @@ if __name__ == '__main__':
     l = TestBaseMenu()
     l.test_base_menu()
     l.test_behavior()
+    l.test_user_info()
+    l.test_toDoBusiness()
+    l.test_toDoList()

@@ -1555,3 +1555,284 @@
 2020-03-24 16:35:46,705 test.py[line:48] INFO 淘宝请求成功
 2020-03-24 16:35:46,863 test.py[line:65] INFO 百度请求成功
 2020-03-24 16:35:46,937 technical_disclosure_scheme.py[line:56] INFO plan_time必须使用日期格式 Y-m-d
+2020-03-26 13:22:20,087 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 13:23:22,335 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 13:23:22,336 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 13:23:22,503 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 13:23:22,503 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 13:23:22,504 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 13:23:22,642 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 13:23:22,643 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 13:23:22,643 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 13:23:23,105 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 13:23:23,106 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 13:23:23,106 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 13:23:23,262 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 13:23:23,262 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 13:23:23,263 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 13:27:05,975 run.py[line:39] INFO start run test case...
+2020-03-26 13:27:30,065 technical_disclosure_scheme.py[line:56] INFO 提交成功
+2020-03-26 13:27:30,065 technical_disclosure_scheme.py[line:59] INFO 添加技术交底方案成功33
+2020-03-26 13:27:30,366 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 13:27:30,552 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 13:27:30,553 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 13:27:30,639 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 13:27:30,640 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 13:27:30,640 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 13:27:30,725 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 13:27:30,726 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 13:27:30,726 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 13:27:30,961 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 13:27:30,961 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 13:27:30,961 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 13:27:31,031 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 13:27:31,031 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 13:27:31,031 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 13:38:42,430 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 13:39:00,511 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 13:39:17,333 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 13:39:17,401 technical_disclosure_scheme.py[line:97] INFO 操作异常
+2020-03-26 13:42:07,623 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 13:42:08,042 technical_disclosure_scheme.py[line:97] INFO 技术交底与方案审批列表
+2020-03-26 13:42:08,043 technical_disclosure_scheme.py[line:100] INFO 技术交底与方案待审核列表查询成功
+2020-03-26 13:45:05,314 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 13:45:17,326 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 13:47:47,757 technical_disclosure_scheme.py[line:22] INFO 技术交底方案列表请求成功
+2020-03-26 14:53:52,135 technical_disclosure_scheme.py[line:101] INFO <Response [500]>
+2020-03-26 14:54:30,712 technical_disclosure_scheme.py[line:101] INFO 333
+2020-03-26 14:54:30,713 technical_disclosure_scheme.py[line:102] INFO <Response [500]>
+2020-03-26 15:05:33,681 technical_disclosure_scheme.py[line:93] INFO 技术交底与方案待审核列表请求异常
+2020-03-26 15:05:53,217 technical_disclosure_scheme.py[line:102] INFO <Response [500]>
+2020-03-26 15:05:57,692 technical_disclosure_scheme.py[line:93] INFO 技术交底与方案待审核列表请求异常
+2020-03-26 15:08:56,965 technical_disclosure_scheme.py[line:98] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:09:35,328 technical_disclosure_scheme.py[line:94] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:09:52,323 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:10:05,938 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:24:51,827 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:26:06,895 run.py[line:41] INFO start run test case...
+2020-03-26 15:26:29,227 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 15:26:29,228 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 15:26:29,538 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 15:26:29,642 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:26:29,835 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 15:26:29,835 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 15:26:29,926 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 15:26:29,927 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 15:26:29,927 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 15:26:30,012 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 15:26:30,013 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 15:26:30,013 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 15:26:30,257 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 15:26:30,257 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 15:26:30,257 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 15:26:30,329 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 15:26:30,329 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 15:26:30,329 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 15:28:52,838 run.py[line:43] INFO start run test case...
+2020-03-26 15:29:16,111 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 15:29:16,112 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 15:29:16,416 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 15:29:16,517 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:29:16,700 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 15:29:16,701 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 15:29:16,784 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 15:29:16,784 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 15:29:16,785 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 15:29:16,865 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 15:29:16,866 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 15:29:16,866 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 15:29:17,087 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 15:29:17,087 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 15:29:17,087 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 15:29:17,244 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 15:29:17,244 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 15:29:17,244 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 15:30:12,699 run.py[line:43] INFO start run test case...
+2020-03-26 15:30:36,501 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 15:30:36,501 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 15:30:36,948 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 15:30:37,050 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 15:30:37,244 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 15:30:37,245 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 15:30:37,332 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 15:30:37,333 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 15:30:37,333 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 15:30:37,445 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 15:30:37,446 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 15:30:37,446 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 15:30:37,678 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 15:30:37,678 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 15:30:37,679 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 15:30:37,854 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 15:30:37,854 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 15:30:37,855 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:06:47,588 run.py[line:43] INFO start run test case...
+2020-03-26 17:07:12,668 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:07:12,669 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:07:12,972 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:07:13,075 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:07:13,264 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:07:13,265 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:07:13,348 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:07:13,348 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:07:13,348 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:07:13,428 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:07:13,429 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:07:13,429 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:07:13,666 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:07:13,667 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:07:13,667 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:07:13,742 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:07:13,742 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:07:13,742 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:07:41,476 run.py[line:43] INFO start run test case...
+2020-03-26 17:08:05,128 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:08:05,129 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:08:05,721 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:08:05,875 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:08:06,082 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:08:06,082 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:08:06,164 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:08:06,165 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:08:06,165 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:08:06,319 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:08:06,320 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:08:06,320 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:08:06,579 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:08:06,580 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:08:06,580 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:08:06,659 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:08:06,660 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:08:06,660 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:14:45,611 run.py[line:43] INFO start run test case...
+2020-03-26 17:15:09,482 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:15:09,482 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:15:10,124 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:15:10,376 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:15:10,780 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:15:10,780 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:15:10,953 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:15:10,953 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:15:10,954 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:15:11,103 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:15:11,104 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:15:11,104 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:15:11,357 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:15:11,357 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:15:11,357 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:15:11,441 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:15:11,442 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:15:11,442 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:16:50,947 run.py[line:43] INFO start run test case...
+2020-03-26 17:17:14,645 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:17:14,646 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:17:15,320 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:17:15,511 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:17:15,699 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:17:15,699 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:17:15,861 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:17:15,862 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:17:15,862 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:17:15,941 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:17:15,941 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:17:15,941 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:17:16,165 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:17:16,166 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:17:16,166 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:17:16,241 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:17:16,241 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:17:16,242 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:18:03,003 run.py[line:43] INFO start run test case...
+2020-03-26 17:18:26,795 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:18:26,795 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:18:27,155 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:18:27,322 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:18:27,508 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:18:27,509 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:18:27,642 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:18:27,643 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:18:27,643 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:18:27,766 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:18:27,767 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:18:27,767 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:18:28,056 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:18:28,056 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:18:28,056 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:18:28,144 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:18:28,144 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:18:28,144 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:18:56,013 run.py[line:43] INFO start run test case...
+2020-03-26 17:19:19,867 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:19:19,867 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:19:20,258 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:19:20,434 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:19:20,635 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:19:20,635 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:19:20,782 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:19:20,783 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:19:20,783 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:19:20,914 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:19:20,915 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:19:20,915 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:19:21,183 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:19:21,184 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:19:21,184 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:19:21,320 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:19:21,321 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:19:21,321 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:38:12,097 run.py[line:43] INFO start run test case...
+2020-03-26 17:38:36,567 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:38:36,568 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:38:36,946 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:38:37,144 technical_disclosure_scheme.py[line:96] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:38:37,526 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:38:37,527 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:38:37,654 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:38:37,655 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:38:37,655 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:38:37,806 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:38:37,807 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:38:37,807 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:38:38,318 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:38:38,319 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:38:38,319 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:38:38,468 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:38:38,468 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:38:38,469 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:42:01,939 run.py[line:43] INFO start run test case...
+2020-03-26 17:42:26,458 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:42:26,458 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:42:26,751 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:42:26,854 technical_disclosure_scheme.py[line:95] INFO 500 Server Error: Internal Server Error for url: http://wisdom_project.yxsoft.net/front/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id%5B%5D=1&sub_project_id%5B%5D=2&sub_project_id%5B%5D=6
+2020-03-26 17:42:27,047 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:42:27,048 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:42:27,139 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:42:27,140 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:42:27,140 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:42:27,216 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:42:27,216 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:42:27,216 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:42:27,463 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:42:27,464 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:42:27,464 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:42:27,547 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:42:27,547 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:42:27,547 baseMenu.py[line:97] INFO /index/toDoList请求成功
+2020-03-26 17:42:46,710 run.py[line:43] INFO start run test case...
+2020-03-26 17:43:10,188 technical_disclosure_scheme.py[line:57] INFO 提交成功
+2020-03-26 17:43:10,189 technical_disclosure_scheme.py[line:60] INFO 添加技术交底方案成功33
+2020-03-26 17:43:10,712 technical_disclosure_scheme.py[line:23] INFO 技术交底方案列表请求成功
+2020-03-26 17:43:11,166 baseMenu.py[line:26] INFO 角色列表
+2020-03-26 17:43:11,167 baseMenu.py[line:29] INFO leftMenu请求成功
+2020-03-26 17:43:11,318 baseMenu.py[line:35] INFO behavior请求成功
+2020-03-26 17:43:11,319 baseMenu.py[line:42] INFO 操作列表
+2020-03-26 17:43:11,319 baseMenu.py[line:45] INFO behavior请求成功
+2020-03-26 17:43:11,434 baseMenu.py[line:52] INFO userInfo请求成功
+2020-03-26 17:43:11,434 baseMenu.py[line:59] INFO 用户信息
+2020-03-26 17:43:11,434 baseMenu.py[line:62] INFO /user/info请求成功
+2020-03-26 17:43:11,846 baseMenu.py[line:68] INFO toDoBusiness请求成功
+2020-03-26 17:43:11,847 baseMenu.py[line:75] INFO 获取数据成功
+2020-03-26 17:43:11,847 baseMenu.py[line:78] INFO /index/toDoBusiness请求成功
+2020-03-26 17:43:12,004 baseMenu.py[line:87] INFO toDoList请求成功
+2020-03-26 17:43:12,004 baseMenu.py[line:94] INFO 获取数据成功
+2020-03-26 17:43:12,005 baseMenu.py[line:97] INFO /index/toDoList请求成功

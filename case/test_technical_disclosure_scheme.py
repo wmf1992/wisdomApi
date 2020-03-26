@@ -2,7 +2,7 @@ from business.technical_disclosure_scheme import technicalDisclosureSchemeView
 import unittest,logging,time
 class TechnicalDisclosureScheme(unittest.TestCase):
     '''测试技术交底接口'''  # 此注释将展示到测试报告的测试组类
-    def test_left_menu(self):
+    def test_technical_disclosure_scheme_list(self):
         '''测试技术交底u列表接口'''  # 此注释将展示到测试报告的测试组类
         t = technicalDisclosureSchemeView()
         t.technical_disclosure_scheme()
@@ -23,8 +23,11 @@ class TechnicalDisclosureScheme(unittest.TestCase):
             'labour_contract_id': ''
         }
         t.technical_disclosure_scheme_add(data)
-
+    def test_technical_disclosure_scheme_approval(self):
+        '''测试技术交底与方案待审核接口'''  # 此注释将展示到测试报告的测试组类
+        t = technicalDisclosureSchemeView()
+        t.technical_disclosure_scheme_approval()
 if __name__ == '__main__':
     l = TechnicalDisclosureScheme()
-    l.test_technical_disclosure_scheme()
+    l.test_technical_disclosure_scheme_list()
     l.test_technical_disclosure_scheme_add()
