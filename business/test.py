@@ -10,6 +10,7 @@
 '''
 #3.导入requests和unittest模块
 import requests
+from requests import exceptions
 import logging
 import logging.config
 import unittest,time,logging
@@ -53,7 +54,7 @@ class TestTaobao(unittest.TestCase):
         url = "https://www.baidu.com"
 
         try:
-            res = requests.get(url,
+            res = requests.get(url,timeout=0.1,
                                headers=session_headers
                                 )
         except Exception as e:
@@ -65,4 +66,17 @@ class TestTaobao(unittest.TestCase):
             logging.info('百度请求成功')
             self.assertEqual(200, res.status_code)
 
+    def test_baidu_timeout(self):
+        try:
+            response = requests.get("https://www.baidu.com", timeout=0.0001, auth=('username', 'password'))
+        except exceptions.Timeout as e:
+            logging.info(32323)
+            print(str(e))
+        else:
+            logging.info(120000000)
+            print(response.text)
 
+
+if __name__ == '__main__':
+    t = TestTaobao()
+    t.test_baidu_timeout()

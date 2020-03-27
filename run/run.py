@@ -24,6 +24,9 @@ suite = unittest.TestSuite()
 suite.addTest(TechnicalDisclosureScheme('test_technical_disclosure_scheme_add'))
 suite.addTest(TechnicalDisclosureScheme("test_technical_disclosure_scheme_list"))
 suite.addTest(TechnicalDisclosureScheme("test_technical_disclosure_scheme_approval"))
+suite.addTest(TechnicalDisclosureScheme("test_technical_disclosure_scheme_detail"))
+suite.addTest(TechnicalDisclosureScheme("test_technical_disclosure_scheme_approval_detail"))
+
 
 suite.addTest(TestBaseMenu('test_base_menu'))
 suite.addTest(TestBaseMenu('test_behavior'))
@@ -39,7 +42,7 @@ now=time.strftime('%Y-%m-%d %H_%M_%S')
 report_name=report_dir+'/'+now+' test_report.html'
 
 with open(report_name,'wb') as f:
-    runner=BSTestRunner(stream=f,title='ShortVideo Test Report',description='ShortVideo Android app test report')
+    runner=BSTestRunner(stream=f,title='智慧工程接口测试报告',description='2020年3月份，王梅芳编写的脚本')
     logging.info('start run test case...')
     # runner.run(discover)
 
