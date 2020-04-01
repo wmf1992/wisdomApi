@@ -1,4 +1,5 @@
 from base.base import base_url,session_headers
+from base.commonfun import Common
 import requests,json
 import  unittest
 import logging
@@ -11,13 +12,11 @@ class technicalDisclosureSchemeView(unittest.TestCase):
     # 技术交底方案列表
     def technical_disclosure_scheme(self):
         url = base_url + '/technical_disclosure_scheme/index?sub_project_id=&page=1&page_size=10'
+        msgs = '技术交底与方案列表'
 
-        # r = requests.get(
-        #     url,
-        #     headers=session_headers
-        # )
-        # print(url)
-        # print(r.json())
+        C = Common.get_exception(url,msgs)
+
+        '''
         try:
             res = requests.get(url,timeout =0.3, headers=session_headers)
             res.raise_for_status()  # 状态不是200会抛异常
@@ -33,6 +32,7 @@ class technicalDisclosureSchemeView(unittest.TestCase):
             self.assertEqual(200, res.status_code)
             self.assertIn('技术交底与方案列表', msg['msg'])
             logging.info('技术交底方案列表请求成功')
+    '''
     # 添加技术交底方案
     def technical_disclosure_scheme_add(self,data):
         url = base_url + '/technical_disclosure_scheme/add'
@@ -176,6 +176,7 @@ class technicalDisclosureSchemeView(unittest.TestCase):
 if __name__ == '__main__':
     l = technicalDisclosureSchemeView()
     # l.technical_disclosure_scheme()
+    l.technical_disclosure_scheme()
     form_data = {
 
         'sub_project_id': 6,
@@ -191,7 +192,7 @@ if __name__ == '__main__':
         'labour_contract_id': ''
 
     }
-    l.technical_disclosure_scheme_add(form_data)
+    # l.technical_disclosure_scheme_add(form_data)
     data = {
         'approval_type': '',
         'sub_project_id': '',
