@@ -14,7 +14,8 @@ class technicalDisclosureSchemeView(unittest.TestCase):
         url = base_url + '/technical_disclosure_scheme/index?sub_project_id=&page=1&page_size=10'
         msgs = '技术交底与方案列表'
 
-        C = Common.get_exception(url,msgs)
+        C = Common()
+        C.get_exception(url,msgs,session_headers)
 
         '''
         try:

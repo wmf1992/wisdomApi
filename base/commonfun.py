@@ -3,15 +3,14 @@ import logging.config
 import requests,json
 from requests import exceptions
 import unittest
-from base.base import session_headers
+
 CON_LOG='../config/log.conf'
 logging.config.fileConfig(CON_LOG)
 logging=logging.getLogger()
 
 class Common(unittest.TestCase):
-    # status_code响应状态码
-    @classmethod
-    def get_exception(self,url,msgs):
+
+    def get_exception(self,url,msgs,session_headers):
         try:
             res = requests.get(url,timeout =3, headers=session_headers)
             res.raise_for_status()  # 状态不是200会抛异常
@@ -26,8 +25,7 @@ class Common(unittest.TestCase):
         else:
             msg = res.json()
             logging.info(msg['msg'])
-            print(res.status_code)
-
             self.assertEqual(200, res.status_code)
             self.assertIn(msgs, msg['msg'])
             logging.info(msgs+'请求成功')
+
