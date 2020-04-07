@@ -1,10 +1,12 @@
 import json
 from base.base import base_url,session_headers,inventory_manager_session_headers
 import requests,json
+from base.commonfun import Common
 import logging
 import logging.config
 import unittest,time
 from BSTestRunner import BSTestRunner
+from requests import exceptions
 CON_LOG='../config/log.conf'
 logging.config.fileConfig(CON_LOG)
 logging=logging.getLogger()
@@ -13,12 +15,29 @@ class MeterialView(unittest.TestCase):
     def get_meterial(self):
         url = base_url + '/meterial/index?page=1&page_size=10&type_id='
         meterial_id = 0
-        # r = requests.get(
-        #     url,
-        #     headers=session_headers
-        # )
-        # print(url)
-        # print(r.json())
+
+        try:
+            res = requests.get(url, headers=session_headers)
+            res.raise_for_status()  # 状态不是200会抛异常
+        except exceptions.Timeout as e:  # 超时异常
+            logging.info(e)
+        # self.assertEqual(200, res.status_code)  # 超时不能使用该断言，否则会报错，因为没有得到res
+            self.assertEqual(0,1)
+        except exceptions.HTTPError as e:  # 状态500 进入该异常
+            logging.info(e)
+            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
+
+        else:
+            msg = res.json()
+            logging.info('请求状态码：%d ' % res.status_code + url + ' : ' + msg['msg'])
+            self.assertEqual(200, res.status_code)
+            self.assertIn('材料管理', msg['msg'])
+            resdata = res.json()
+            # print(resdata['data']['item'][0]['meterial_name'])
+            # 返回最新一条的材料id
+            meterial_id = resdata['data']['item'][0]['id']
+        return meterial_id
+        '''
         try:
             res = requests.get(url, headers=session_headers)
             logging.info('材料列表请求成功')
@@ -34,47 +53,27 @@ class MeterialView(unittest.TestCase):
         except Exception as e:
             print("post请求出现了异常：{0}".format(e))
             return meterial_id
-
+        '''
     # 添加材料
-    def test_meterial_add(self):
+    def meterial_add(self,data):
         url = base_url + '/meterial/add'
 
         form_data = {
-            'image': 'http://wisdom-youxuan-dev.oss-cn-chengdu.aliyuncs.com/images/a9f15e98bff56309f3bb31739420e1df.jpg',
-            'meterial_code':'',
-            'meterial_name': 'huanghua菜',
-            'type_name':'',
-            'type_id': 127,
-            'meterial_spec': 500,
-            'meterial_unit': 'g',
-            'warning_num':'',
-            'parent_type_id': 6,
-            'second_type_id': 8
+            'image': data['image'],
+            'meterial_code':data['meterial_code'],
+            'meterial_name': data['meterial_name'],
+            'type_name':data['type_name'],
+            'type_id': data['type_id'],
+            'meterial_spec': data['meterial_spec'],
+            'meterial_unit': data['meterial_unit'],
+            'warning_num':data['warning_num'],
+            'parent_type_id': data['parent_type_id'],
+            'second_type_id': data['second_type_id']
         }
-        try:
-            res = requests.post(url,
-                                headers=session_headers,
-                                data=form_data
-                                )
-
-            # if res.status_code == 200:
-            #     # self.assertEqual(1)
-            #     logging.info('添加材料成功')
-            #     return True
-            #     # self.assertTrue(res.status_code,200)
-            # else:
-            #
-            #     # self.assertTrue(res.status_code,200)
-            #     # raise Exception("Invalid level!")
-            #     logging.info('添加材料失败，status_code：%d'%(res.status_code))
-            #     return False
-        except Exception as e:
-            # logging.info("post请求出现了异525常：{0}".format(e))
-            # self.assertFalse(0)
-            logging.info(res.status_code)
-        else:
-            logging.info(res.status_code)
-            self.assertEqual(200, res.status_code)
+        msgs = '提交成功'
+        C = Common()
+        method = 'post'
+        C.get_exception(method, url, msgs, session_headers, form_data=form_data)
 
     # 新增材料审批详情页
     def get_meterial_approval(self):
@@ -82,64 +81,54 @@ class MeterialView(unittest.TestCase):
         print(meterial_id)
         if meterial_id > 0:
             url = base_url + '/meterial_approval/detail?id=%d'%(meterial_id)
-            try:
-                res = requests.get(url, headers=session_headers)
-                logging.info('新增材料审批详情页请求成功')
+            msgs = '材料审批详'
+            C = Common()
+            method = 'get'
+            C.get_exception(method, url, msgs, session_headers, form_data='')
 
-            except Exception as e:
-                logging.info("post请求出现了异常：{0}".format(e))
         else:
             pass
 
     # 添加材料审批通过
-    def meterial_approval_check(self):
+    def meterial_approval_check(self,data):
         meterial_id = self.get_meterial()
         if meterial_id > 0:
             url = base_url + '/meterial_approval/check'
             form_data = {
                 id: meterial_id,
-                'meterial_code': 'CL031803',
-                'meterial_name': '白菜',
-                'parent_type_id': 6,
-                'second_type_id': 8,
-                'type_id': 127,
-                'meterial_spec': 500,
-                'meterial_unit': 'g',
-                'image': 'http://wisdom-youxuan-dev.oss-cn-chengdu.aliyuncs.com/images/a9f15e98bff56309f3bb31739420e1df.jpg',
-                'warning_num': 20,
-                'is_need_approval': 1,
-                'edit_user': 3,
-                'create_time': '2020-03-18',
-                'status': 0,
-                'type_text': '三级金属',
-                'status_text': '审批中',
-                'edit_username': '总经理张三01',
-                'is_approval_right': 1,
-                'files': '',
-                'images': '',
-                'approval_opinions': '无意见',
-                'check': 1,
+                'meterial_code': data['meterial_code'],
+                'meterial_name': data['meterial_name'],
+                'parent_type_id': data['parent_type_id'],
+                'second_type_id': data['second_type_id'],
+                'type_id': data['type_id'],
+                'meterial_spec': data['meterial_spec'],
+                'meterial_unit': data['meterial_unit'],
+                'image': data['image'],
+                'warning_num': data['warning_num'],
+                'is_need_approval': data['is_need_approval'],
+                'edit_user': data['edit_user'],
+                'create_time': data['create_time'],
+                'status': data['status'],
+                'type_text': data['type_text'],
+                'status_text': data['status_text'],
+                'edit_username': data['edit_username'],
+                'is_approval_right': data['is_approval_right'],
+                'files': data['files'],
+                'images': data['images'],
+                'approval_opinions': data['approval_opinions'],
+                'check': data['check'],
                 'meterial_id': meterial_id
             }
-            try:
-                res = requests.post(url,
-                                    headers=inventory_manager_session_headers,
-                                    data=form_data
-                                    )
-                logging.info('添加材料审批通过')
-                # print(res.json())
-            except Exception as e:
-                print("post请求出现了异常：{0}".format(e))
-                logging.info(res.status_code)
+            msgs = '操作成功'
+            C = Common()
+            method = 'post'
+            C.get_exception(method, url, msgs, inventory_manager_session_headers, form_data=form_data)
         else:
             pass
 if __name__ == '__main__':
     report_dir = '../reports'
-
-
     # 未按顺序执行测试用例
     # discover=unittest.defaultTestLoader.discover(test_dir,pattern='test_login.py')
-
     # 测试套件，定义测试用例执行顺序
     suite = unittest.TestSuite()
     suite.addTest(MeterialView("test_meterial_add"))

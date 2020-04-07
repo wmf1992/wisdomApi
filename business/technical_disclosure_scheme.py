@@ -15,25 +15,10 @@ class technicalDisclosureSchemeView(unittest.TestCase):
         msgs = '技术交底与方案列表'
 
         C = Common()
-        C.get_exception(url,msgs,session_headers)
+        method = 'get'
+        C.get_exception(method,url,msgs,session_headers,form_data='')
 
-        '''
-        try:
-            res = requests.get(url,timeout =0.3, headers=session_headers)
-            res.raise_for_status()  # 状态不是200会抛异常
-        except exceptions.Timeout as e:  # 超时异常
-            logging.info(e)
-            # self.assertEqual(200, res.status_code)  # 超时不能使用该断言，否则代码会报错，因为超时了，没有得到res
-        except exceptions.HTTPError as e:  # 状态500 进入该异常
-            logging.info(e)
-            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
-        else:
-            msg = res.json()
-            logging.info(msg['msg'])
-            self.assertEqual(200, res.status_code)
-            self.assertIn('技术交底与方案列表', msg['msg'])
-            logging.info('技术交底方案列表请求成功')
-    '''
+
     # 添加技术交底方案
     def technical_disclosure_scheme_add(self,data):
         url = base_url + '/technical_disclosure_scheme/add'
@@ -50,29 +35,12 @@ class technicalDisclosureSchemeView(unittest.TestCase):
             'files': data['files'],
             'labour_contract_id': data['labour_contract_id']
         }
-        try:
-            res = requests.post(url,
-                                timeout=0.1,
-                                headers=session_headers,
-                                data=form_data,
+        msgs = '提交成功'
 
-                                )
+        C = Common()
+        method = 'post'
+        C.get_exception(method,url, msgs, session_headers,form_data)
 
-            res.raise_for_status()  # 状态不是200会抛异常
-        except exceptions.Timeout as e:  # 超时异常
-            logging.info(e)
-            # self.assertEqual(200, res.status_code)  # 超时不能使用该断言，否则会报错，因为没有得到res
-        except exceptions.HTTPError as e:  # 状态500 进入该异常
-            logging.info(e)
-            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
-            logging.info('添加技术交底与方案失败')
-        else:
-
-            msg=res.json()
-            logging.info(msg['msg'])
-            self.assertEqual(200, res.status_code)
-            self.assertIn('提交成功',msg['msg'])
-            logging.info('添加技术交底方案成功')
     #技术交底与方案待审核搜索列表
     def technical_disclosure_scheme_approval(self,data):
         # url = base_url + '/technical_disclosure_scheme_approval/index?approval_type=1&sub_project_id[]=1&sub_project_id[]=2&sub_project_id[]=6'
@@ -101,78 +69,28 @@ class technicalDisclosureSchemeView(unittest.TestCase):
             pinUlr = pinUlr + '%s' % key + '=' + '%s' % value + '&'
         url = url + pinUlr
         # print(url)
+        msgs = '技术交底与方案审批列表'
 
-        try:
-            res = requests.get(url,
-                                timeout=0.1,
-                                headers=session_headers,
+        C = Common()
+        method = 'get'
+        C.get_exception(method, url, msgs, session_headers, form_data='')
 
-                                )
-
-            res.raise_for_status()   #状态不是200会抛异常
-            # logging.info(res.json())
-
-        except exceptions.Timeout as e:  # 超时异常
-            logging.info(str(e))
-            # self.assertEqual(200,res.status_code)    #超时不能用这句话进行断言
-        except exceptions.HTTPError as e:    #状态500 进入该异常
-            logging.info(e)
-            self.assertEqual(200, res.status_code)   #这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
-        else:
-            msg=res.json()
-            logging.info(msg['msg'])
-            self.assertEqual(200, res.status_code)
-            self.assertIn('技术交底与方案审批列表',msg['msg'])
-            logging.info('技术交底与方案待审核列表查询成功')
 
     # 技术交底与方案详情页
     def technical_disclosure_scheme_detail(self,detailId):
         url = base_url + '/technical_disclosure_scheme/detail?id=%d'%detailId
-        try:
-            res = requests.get(url,timeout =0.3,
-                               headers=session_headers,
-                               )
-
-            res.raise_for_status()  # 状态不是200会抛异常
-        except exceptions.Timeout as e:  # 超时异常
-            logging.info(e)
-            # self.assertEqual(200, res.status_code)  # 超时不能使用该断言，否则会报错，因为没有得到res
-        except exceptions.HTTPError as e:  # 状态500 进入该异常
-            logging.info(e)
-            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
-        else:
-            msg = res.json()
-            logging.info(msg['msg'])
-            self.assertEqual(200, res.status_code)
-            self.assertIn('技术交底与方案详情', msg['msg'])
-            logging.info('技术交底与方案详情查询成功')
+        msgs = '技术交底与方案详情'
+        C = Common()
+        method = 'get'
+        C.get_exception(method, url, msgs, session_headers, form_data='')
 
     # 技术交底与方案待审批详情页
     def technical_disclosure_scheme_approval_approval_detail(self,detailId):
         url = base_url +'/technical_disclosure_scheme_approval/detail?id=%d'%detailId
-        try:
-            res = requests.get(url,timeout=0.3,
-                               headers=session_headers,
-                               )
-
-            res.raise_for_status()  # 状态不是200会抛异常
-        except exceptions.Timeout as e:  # 超时异常
-            logging.info(e)
-            # self.assertEqual(200, res.status_code)  # 超时不能使用该断言，否则会报错，因为没有得到res
-        except exceptions.HTTPError as e:  # 状态500 进入该异常
-            logging.info(e)
-            self.assertEqual(200, res.status_code)  # 这个断言不能放在上面，如果放在前面断言(try里面)，考虑到返回状态200，也有可能是fail的用例
-        else:
-            msg = res.json()
-            logging.info(msg['msg'])
-            self.assertEqual(200, res.status_code)
-            self.assertIn('技术交底与方案待审批详情', msg['msg'])
-            logging.info('技术交底与方案待审批详情查询成功')
-
-
-
-
-
+        msgs = '技术交底与方案审批详情'
+        C = Common()
+        method = 'get'
+        C.get_exception(method, url, msgs, session_headers, form_data='')
 
 if __name__ == '__main__':
     l = technicalDisclosureSchemeView()
@@ -193,7 +111,7 @@ if __name__ == '__main__':
         'labour_contract_id': ''
 
     }
-    # l.technical_disclosure_scheme_add(form_data)
+    l.technical_disclosure_scheme_add(form_data)
     data = {
         'approval_type': '',
         'sub_project_id': '',

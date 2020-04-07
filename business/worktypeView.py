@@ -1,47 +1,35 @@
 from base.base import base_url,session_headers
+from base.commonfun import Common
 import requests,json
 import logging
 import logging.config
 CON_LOG='../config/log.conf'
 logging.config.fileConfig(CON_LOG)
 logging=logging.getLogger()
-class worktypeView:
+class WorktypeView:
     # 工种列表
     def work_type(self):
         url = base_url + '/work_type/index?page=1&page_size=10&work_num=&work_name='
+        msgs = '部门列表'
+        C = Common()
+        method = 'get'
+        C.get_exception(method, url, msgs, session_headers, form_data='')
 
-        # r = requests.get(
-        #     url,
-        #     headers=session_headers
-        # )
-        # print(url)
-        # print(r.json())
-        try:
-            res = requests.get(url, headers=session_headers)
-            logging.info('工种列表请求成功')
-            # print(res.json())
-        except Exception as e:
-            print("post请求出现了异常：{0}".format(e))
-            logging.info(res.status_code)
     # 添加工种成功
-    def work_type_add(self):
+    def work_type_add(self,data):
         url = base_url + '/work_type/add'
 
         form_data = {
-            'work_num': 'ZZ0317',
-            'work_name': '装潢工'
+            'work_num': data['work_num'],
+            'work_name':  data['work_name']
         }
-        try:
-            res = requests.post(url,
-                                headers=session_headers,
-                                data=form_data
-                                )
-            logging.info('添加工种成功')
-            # print(res.json())
-        except Exception as e:
-            print("post请求出现了异常：{0}".format(e))
-            logging.info(res.status_code)
+        msgs = '添加成功'
+        C = Common()
+        method = 'post'
+        C.get_exception(method, url, msgs, session_headers, form_data=form_data)
+
+
 if __name__ == '__main__':
-    l = worktypeView()
+    l = WorktypeView()
     l.work_type()
     l.work_type_add()

@@ -57,11 +57,11 @@ class TechnicalDisclosureScheme(unittest.TestCase):
         '''测试技术交底与方案审批详情页接口'''  # 此注释将展示到测试报告的测试组类
         detailID =70
         t = technicalDisclosureSchemeView()
-        t.technical_disclosure_scheme_detail(detailID)
+        t.technical_disclosure_scheme_approval_approval_detail(detailID)
 
 if __name__ == '__main__':
     l = TechnicalDisclosureScheme()
-    # l.test_technical_disclosure_scheme_list()
-    # l.test_technical_disclosure_scheme_add()
-    # l.test_technical_disclosure_scheme_approval()
+    l.test_technical_disclosure_scheme_list()
+    l.test_technical_disclosure_scheme_add()
+    l.test_technical_disclosure_scheme_approval()
     l.test_technical_disclosure_scheme_approval_detail()
