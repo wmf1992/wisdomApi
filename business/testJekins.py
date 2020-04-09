@@ -10,6 +10,7 @@
 '''
 #3.导入requests和unittest模块
 import requests
+import pymysql
 import unittest,time,logging
 import logging.config
 CON_LOG='../config/log.conf'
