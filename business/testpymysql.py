@@ -17,10 +17,10 @@ try:
 
     with connection.cursor() as cursor:
         # Read a single record
-        sql = "SELECT `uid`, `nickname` FROM `house_user`"
+        sql = "SELECT MAX(id) FROM wisdom_progress_plan WHERE STATUS=-2"
         cursor.execute(sql)
         result = cursor.fetchone()      # 获取第一行
-        resultall = cursor.fetchall()   # 获取所有
-        print(resultall)
+        # resultall = cursor.fetchall()   # 获取所有
+        print(result['MAX(id)'])
 finally:
     connection.close()

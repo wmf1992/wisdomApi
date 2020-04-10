@@ -23,7 +23,7 @@ from case.test_staff import TestStaff
 from case.test_user import TestUsers
 from case.test_warehouse import TestWarehouse
 from case.test_work_type import TestWorkType
-
+from case.test_progress_plan import TestProgressPlan
 # 未按顺序执行测试用例
 # discover=unittest.defaultTestLoader.discover(test_dir,pattern='test_login.py')
 
@@ -97,6 +97,18 @@ suite.addTest(TestWorkType('test_work_type_add'))
 # 仓库列表
 suite.addTest(TestWarehouse('test_get_warehouse'))
 suite.addTest(TestWarehouse('test_warehouse_add'))
+
+# 进度计划
+
+suite.addTest(TestProgressPlan('test_progress_plan_index'))
+suite.addTest(TestProgressPlan('test_progress_plan_add'))
+suite.addTest(TestProgressPlan('test_progress_plan_list_db'))
+suite.addTest(TestProgressPlan('test_progress_plan_testSave'))
+suite.addTest(TestProgressPlan('test_progress_plan_submit'))
+suite.addTest(TestProgressPlan('test_progress_plan_approval_add'))
+suite.addTest(TestProgressPlan('test_progress_plan_detail'))
+
+
 
 runner = unittest.TextTestRunner()
 
