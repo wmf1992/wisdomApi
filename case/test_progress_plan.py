@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 from business.progress_plan import ProgressPlan
 import unittest,logging,time
 from mysqlDb.progress_plan_db import ProgressPlanDb

@@ -24,6 +24,9 @@ from case.test_user import TestUsers
 from case.test_warehouse import TestWarehouse
 from case.test_work_type import TestWorkType
 from case.test_progress_plan import TestProgressPlan
+from case.test_quality_check import TestQualityCheck
+from case.test_sub_project import TestSubProject
+from case.test_month_bulk_meterial_plan import TestMonthBulkMeterialPlan
 # 未按顺序执行测试用例
 # discover=unittest.defaultTestLoader.discover(test_dir,pattern='test_login.py')
 
@@ -107,6 +110,25 @@ suite.addTest(TestProgressPlan('test_progress_plan_testSave'))
 suite.addTest(TestProgressPlan('test_progress_plan_submit'))
 suite.addTest(TestProgressPlan('test_progress_plan_approval_add'))
 suite.addTest(TestProgressPlan('test_progress_plan_detail'))
+
+# 质量检查
+suite.addTest(TestQualityCheck('test_quality_check_add'))
+suite.addTest(TestQualityCheck('test_quality_check_index'))
+suite.addTest(TestQualityCheck('test_quality_check_approval'))
+suite.addTest(TestQualityCheck('test_quality_check_detail'))
+
+
+# 工程结算
+suite.addTest(TestSubProject('test_sub_project_index'))
+suite.addTest(TestSubProject('test_sub_project_detail'))
+suite.addTest(TestSubProject('test_sub_project_add'))
+suite.addTest(TestSubProject('test_sub_project_check'))
+
+# 月大宗材料计划
+suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_index'))
+suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_detail'))
+suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_add'))
+suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_approval'))
 
 
 

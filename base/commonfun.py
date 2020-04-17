@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 import logging
 import logging.config
 import requests,json
@@ -34,5 +36,6 @@ class Common(unittest.TestCase):
             logging.info(msg)
             self.assertEqual(200, res.status_code)
             self.assertIn(msgs, msg['msg'])
+            return msg
 
 
