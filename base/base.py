@@ -12,14 +12,14 @@ session_headers = {
 }
 # 审批人
 approval_session_headers =[
-    {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'access-token': 'eda6vgPNtHrWv7qRidnm9ehYtNNT6K8VANMQhxCL8uA7rHCcfQgytZ0ikh+pKRaGHXo+LQI'
-    },
     # {
     # 'Content-Type': 'application/x-www-form-urlencoded',
-    # 'access-token': '824705R+n8tFLOnsQ5/UfQT1CqPTGQwva58y0VZq5bi98h2+3JnNEuGdkiBF5dNDVk5kyPw'
+    # 'access-token': 'eda6vgPNtHrWv7qRidnm9ehYtNNT6K8VANMQhxCL8uA7rHCcfQgytZ0ikh+pKRaGHXo+LQI'
     # },
+    {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'access-token': '9ab9hwmyq1jdNcx1DDBWWYu+BZzyRcXh5dnaHD8hOI48RGRtLjhEBL3yQp4gFM2Uq1ys3c0'
+    },
     {
     'Content-Type': 'application/x-www-form-urlencoded',
     'access-token': 'c5632XwHyFZs7X/1P2jG+Vh4fmhwUaSnmW+TpxAnAOwDI67+esR1ITJzggQDmnhUH6vgSaS9'
@@ -29,10 +29,10 @@ approval_session_headers =[
     #  'access-token':'2a15RHv88ArWFfuXbFQtt+qB66zGTDuEFg+b6UoNNLHrQyTDucELdeqZZQk9ac2veqqeH8zg'
 ]
 # 总库管田七
-inventory_manager_session_headers =[ {
+inventory_manager_session_headers ={
     'Content-Type': 'application/x-www-form-urlencoded',
-    'access-token': 'b612OkeMT2B3g4JMeL4ODnC6DfHxp2D7u+nhyoJDU30be3mLrN97gpApBMLXHB1+OHO0vbQ',
-}]
+    'access-token': '4573hU0g0jJ+G3S4KRCJMQUohEBj8dCD+iaIoCWWfm3T3/AMXw0ogg1FgVYd+s/G/0lXXIM',
+}
 # 需要填写评分信息
 score_session_headers ={
     'Content-Type': 'application/x-www-form-urlencoded',

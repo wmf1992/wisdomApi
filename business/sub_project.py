@@ -91,6 +91,7 @@ class SubProject:
             'project_settlement_id': settingPayRate_form_data['project_settlement_id'],
             'approval_pay_rate': settingPayRate_form_data['approval_pay_rate']
         }
+
         C.get_exception(method, settingPayRate_url, '保存成功', score_session_headers, form_data=settingPayRate_form_data)
 
         # 需要填写结算信息，执行审批操作

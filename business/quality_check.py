@@ -91,9 +91,9 @@ class QualityCheck:
         for session_headers in approval_session_headers:
             C.get_exception(method, url, msgs, session_headers, form_data=form_data)
             time.sleep(3)
-        for session_headers in score_session_headers:
-            C.get_exception(method, url, msgs, session_headers, form_data=form_data_score)
-            time.sleep(3)
+
+        C.get_exception(method, url, msgs, score_session_headers, form_data=form_data_score)
+        time.sleep(3)
 
 
 

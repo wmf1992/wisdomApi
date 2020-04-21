@@ -4,7 +4,8 @@ class TestMeterial(unittest.TestCase):
     def test_get_meterial(self):
         '''测试材料列表接口'''  # 此注释将展示到测试报告的测试组类
         M = MeterialView()
-        M.get_meterial()
+        resdata = M.get_meterial()
+        return resdata['data']['item'][0]['id']
     def test_meterial_add(self):
         '''测试添加材料接口'''  # 此注释将展示到测试报告的测试组类
         M = MeterialView()
@@ -24,12 +25,16 @@ class TestMeterial(unittest.TestCase):
     def test_get_meterial_approval(self):
         '''测试材料审核列表接口'''  # 此注释将展示到测试报告的测试组类
         M = MeterialView()
-        M.get_meterial_approval()
+        meterial_id = self.test_get_meterial()
+        M.get_meterial_approval(meterial_id)
     def test_meterial_approval_check(self):
         '''测试添加材料审批通过接口'''  # 此注释将展示到测试报告的测试组类
         M = MeterialView()
+        meterial_id = self.test_get_meterial()
+        # meterial_id =226
+        # print(meterial_id)
         form_data = {
-
+            'id': meterial_id,
             'meterial_code': 'CL031804',
             'meterial_name': '娃娃菜',
             'parent_type_id': 6,
@@ -51,6 +56,12 @@ class TestMeterial(unittest.TestCase):
             'images': '',
             'approval_opinions': '无意见',
             'check': 1,
+            'meterial_id':meterial_id
 
         }
         M.meterial_approval_check(form_data)
+if __name__ == '__main__':
+    T=TestMeterial()
+    T.test_meterial_add()
+    T.test_get_meterial()
+    T.test_meterial_approval_check()

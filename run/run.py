@@ -27,6 +27,10 @@ from case.test_progress_plan import TestProgressPlan
 from case.test_quality_check import TestQualityCheck
 from case.test_sub_project import TestSubProject
 from case.test_month_bulk_meterial_plan import TestMonthBulkMeterialPlan
+from case.test_meterial_warehousing import TestMeterialWarehousing
+from case.test_meterial_plan import TestMeterialPlan
+from case.test_meterial_outbound import TestMeterialOutbound
+from case.test_meterial_inventory import TestMeterialInventory
 # 未按顺序执行测试用例
 # discover=unittest.defaultTestLoader.discover(test_dir,pattern='test_login.py')
 
@@ -105,7 +109,6 @@ suite.addTest(TestWarehouse('test_warehouse_add'))
 
 suite.addTest(TestProgressPlan('test_progress_plan_index'))
 suite.addTest(TestProgressPlan('test_progress_plan_add'))
-suite.addTest(TestProgressPlan('test_progress_plan_list_db'))
 suite.addTest(TestProgressPlan('test_progress_plan_testSave'))
 suite.addTest(TestProgressPlan('test_progress_plan_submit'))
 suite.addTest(TestProgressPlan('test_progress_plan_approval_add'))
@@ -129,6 +132,32 @@ suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_index'))
 suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_detail'))
 suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_add'))
 suite.addTest(TestMonthBulkMeterialPlan('test_month_bulk_meterial_plan_approval'))
+
+
+# 入库
+suite.addTest(TestMeterialWarehousing('test_meterial_warehousing_index'))
+suite.addTest(TestMeterialWarehousing('test_meterial_warehousing_detail'))
+suite.addTest(TestMeterialWarehousing('test_meterial_warehousing_add'))
+suite.addTest(TestMeterialWarehousing('test_warehousing_approval_check'))
+
+# 日常材料计划
+suite.addTest(TestMeterialPlan('test_meterial_plan_index'))
+suite.addTest(TestMeterialPlan('test_meterial_plan_detail'))
+suite.addTest(TestMeterialPlan('test_meterial_plan_add'))
+suite.addTest(TestMeterialPlan('test_meterial_plan_approval'))
+
+# 出库
+suite.addTest(TestMeterialOutbound('test_meterial_outbound_index'))
+suite.addTest(TestMeterialOutbound('test_meterial_outbound_detail'))
+suite.addTest(TestMeterialOutbound('test_meterial_outbound_add'))
+suite.addTest(TestMeterialOutbound('test_outbound_approval_check'))
+
+
+# 盘点
+suite.addTest(TestMeterialInventory('test_meterial_inventory_index'))
+suite.addTest(TestMeterialInventory('test_meterial_inventory_detail'))
+suite.addTest(TestMeterialInventory('test_meterial_inventory_add'))
+suite.addTest(TestMeterialInventory('test_inventory_approval_check'))
 
 
 
